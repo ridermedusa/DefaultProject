@@ -1,0 +1,154 @@
+﻿@model CRM_System.Model.Mpr_Customer
+@{
+    ViewBag.Title = "客户建档";
+}
+
+ <link href="~/Scripts/jQueryAutocompletePlugin-master/jquery.autocomplete.css" rel="stylesheet" />
+<script src="~/Scripts/jQueryAutocompletePlugin-master/jquery.autocomplete.min.js?3"></script>
+<script src="~/Scripts/area.js"></script>
+<script src="~/Scripts/areaQy.js"></script>  
+<script src="/Areas/Admin/Script/Customer/Edit.js?@(new Random().Next(10000))"></script>
+<div class="col-md-6" style="margin-top:15px;">
+    <!-- general form elements -->
+    <div class="box box-primary">
+        <div class="box-header">
+            <h3 class="box-title" title="客户建档">客户建档</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form role="form" id="Subinfo">
+            <input type="hidden" id="ID" name="ID" value="@(ViewBag.ID)" />
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1" title="身份证号">身份证号</label> 
+                    <input type="text" class="form-control" id="ID_Card" name="ID_Card" style="width:40%;" placeholder="Enter..." value="@(Model.ID_Card)" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" title="客户姓名">客户姓名</label>  
+                    <input type="text" class="form-control" id="Name" name="Name" style="width:40%;"  placeholder="Enter..." value="@(Model.Name)" />
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1" title="客户电话">客户电话</label>
+
+                    <input type="text" class="form-control" id="Phone" name="Phone" style="width:40%;"  placeholder="Enter..." value="@(Model.Phone)" />
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1" title="省/市/区">省/市/区</label>
+                    <table style="width:100%;">
+                        <tr>
+                            <td style="width:33%"><select id="Province" name="Province" class="form-control" style="width:80%;"></select></td>
+                            <td style="width:33%"><select id="City" name="City" class="form-control" style="width:80%;"></select></td>
+                            <td style="width:33%"><select id="Area" name="Area" class="form-control" style="width:80%;"></select></td>
+                        </tr>
+                    </table>
+                    <input type="hidden"  id="ProvinceHide" value="@(Model.Province)"/>
+                    <input type="hidden" id="CityHide" value="@(Model.City)" />
+                    <input type="hidden" id="AreaHide" value="@(Model.Area)" />
+                </div> 
+                <div class="form-group">
+                    <label for="exampleInputEmail1" title="详细地址">详细地址</label>
+
+                    <input type="text" class="form-control" id="Address" name="Address" style="width:40%;"  placeholder="Enter..." value="@(Model.Address)" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" title="QQ">QQ</label>
+
+                    <input type="text" class="form-control" id="QQ" name="QQ" style="width:40%;"  placeholder="Enter..." value="@(Model.QQ)" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" title="微信">微信</label>
+
+                    <input type="text" class="form-control" id="WeChat" name="WeChat" style="width:40%;"  placeholder="Enter..." value="@(Model.WeChat)" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" title="电子邮箱">电子邮箱</label>
+
+                    <input type="text" class="form-control" id="Email" name="Email" style="width:40%;"  placeholder="Enter..." value="@(Model.Email)" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" title="行业">行业</label>
+                    <select id="Position" name="Position" class="form-control" style="width:30%;">
+                        <option value="">请选择</option>
+                        @foreach (var item in new CRM_System.BLL.Mpr_Basic_ParamsService().FindByParam(s => s.BasicType == (int)CRM_System.BLL.BasicType.行业))
+                        {
+                            if (Model.Position == item.ParamsName)
+                            {
+                                <option value="@(item.ParamsName)" selected="selected">@(item.ParamsName)</option>
+                            }
+                            else
+                            {
+                                <option value="@(item.ParamsName)">@(item.ParamsName)</option>
+                            }
+                        }
+                    </select> 
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1" title="股龄">股龄</label> 
+                    <input type="text" class="form-control" id="SharesAge" name="SharesAge" style="width:40%;display: inline;"  placeholder="Enter..." value="@(Model.SharesAge)" />
+                    <select id="Company" name="Company" class="form-control" style="width:30%;display: inline;">
+                        <option value="年">年</option>
+                        <option value="月">月</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleInputEmail1" title="投资品种">投资品种</label>
+                    <ul style="list-style:none;">
+                        @foreach (var item in new CRM_System.BLL.Mpr_Basic_ParamsService().FindByParam(s => s.BasicType == (int)CRM_System.BLL.BasicType.投资品种))
+                        {
+                            if (Model.InvestmentVariety.Split(',').Contains(item.ParamsName))
+                            {
+                                <li style="float:left; margin:15px;"><input type="checkbox" name="InvestmentVariety" value="@(item.ParamsName)" checked="checked" />  @(item.ParamsName)</li>
+                            }
+                            else
+                            {
+                                <li style="float:left; margin:15px;">
+                                    <input type="checkbox" name="InvestmentVariety" value="@(item.ParamsName)"  />  @(item.ParamsName)
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+               <div style="clear:both;"></div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" title="可用资金">可用资金</label>
+
+                    <input type="text" class="form-control" id="AvailableMoney" name="AvailableMoney" style="width:40%;"  placeholder="Enter..." value="@(Model.AvailableMoney)" />
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1" title="软件销售">软件销售</label>
+                    <input type="text" class="form-control" id="Sale" name="Sale" style="width:40%;" placeholder="Enter..." value="@(Model.Sale)" />
+                    <input type="hidden" id="SaleID" name="SaleID" style="width:40%;" placeholder="Enter..." value="@(Model.SaleID)" />
+                </div> 
+
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1" title="投资顾问">投资顾问</label>
+                    <select id="InvestmentAdviser" name="InvestmentAdviser" class="form-control" style="width:30%;">
+                        <option value="">请选择</option>
+                        @foreach(var item in new CRM_System.BLL.Sys_AdminService().FindByParam(s =>  true))
+                        {
+                            if (Model.InvestmentAdviser == item.ID)
+                            {
+                                <option value="@(item.ID)" selected="selected">@(item.TrueName)</option>
+                            }
+                            else
+                            {
+                                <option value="@(item.ID)">@(item.TrueName)</option>
+                            }
+                        }
+                    </select>
+                </div>
+            
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <button type="button" class="btn btn-primary" id="EditBtn">保存</button>
+            </div>
+        </form>
+    </div><!-- /.box -->
+</div><!--/.col (left) -->

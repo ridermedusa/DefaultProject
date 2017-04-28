@@ -1,0 +1,735 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CRM_SystemjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Mpr_Admin_ButtonRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PageID" Type="int" />
+    <Property Name="Operation" Type="nvarchar" MaxLength="50" />
+    <Property Name="ButtonName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Roletype" Type="int" />
+    <Property Name="OnlyStr" Type="nvarchar" MaxLength="50" />
+    <Property Name="Addtime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Mpr_Admin_Menu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RightUrl" Type="nvarchar" MaxLength="100" />
+    <Property Name="RightName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Ename" Type="nvarchar" MaxLength="200" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="AddTime" Type="datetime" />
+    <Property Name="RightParent" Type="int" />
+    <Property Name="controller" Type="varchar" MaxLength="100" />
+    <Property Name="action" Type="varchar" MaxLength="100" />
+    <Property Name="IsButton" Type="int" />
+  </EntityType>
+  <EntityType Name="Mpr_Admin_Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleID" Type="int" />
+    <Property Name="PageID" Type="int" />
+    <Property Name="ButtonIDCollection" Type="nvarchar" MaxLength="500" />
+    <Property Name="AddTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Mpr_APP_Config">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Version" Type="nvarchar" MaxLength="50" />
+    <Property Name="Android_Url" Type="nvarchar" MaxLength="500" />
+    <Property Name="Ios_Url" Type="nvarchar" MaxLength="500" />
+    <Property Name="ChangeTime" Type="datetime" />
+    <Property Name="ChangeUser" Type="int" />
+  </EntityType>
+  <EntityType Name="Mpr_Article_Basic">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="ArtContent" Type="nvarchar(max)" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="Adduser" Type="int" />
+  </EntityType>
+  <EntityType Name="Mpr_Article_New">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="Type" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="ArtDes" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ArtContent" Type="nvarchar(max)" />
+    <Property Name="Pic" Type="nvarchar" MaxLength="500" />
+    <Property Name="BaseHit" Type="int" Nullable="false" />
+    <Property Name="Hit" Type="int" Nullable="false" />
+    <Property Name="BaseForward" Type="int" Nullable="false" />
+    <Property Name="Sort" Type="int" Nullable="false" />
+    <Property Name="IsFirst" Type="int" Nullable="false" />
+    <Property Name="IsIndex" Type="int" Nullable="false" />
+    <Property Name="IsReward" Type="int" Nullable="false" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Adduser" Type="int" />
+    <Property Name="RewardNum" Type="int" Nullable="false" />
+    <Property Name="RewardPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ForwardNum" Type="int" Nullable="false" />
+    <Property Name="CommentNum" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mpr_Banner">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="int" />
+    <Property Name="Url" Type="nvarchar" MaxLength="300" />
+    <Property Name="LinkUrl" Type="nvarchar" MaxLength="100" />
+    <Property Name="LinkName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LinkType" Type="int" />
+    <Property Name="Position" Type="nvarchar" MaxLength="50" />
+    <Property Name="Params" Type="nvarchar" MaxLength="500" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="Adduser" Type="int" />
+  </EntityType>
+  <EntityType Name="Mpr_Comment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="CommentType" Type="int" />
+    <Property Name="BaseID" Type="char" MaxLength="32" />
+    <Property Name="BaseOwner" Type="char" MaxLength="32" />
+    <Property Name="CommentUserID" Type="char" MaxLength="32" />
+    <Property Name="Context" Type="nvarchar" MaxLength="2000" />
+    <Property Name="IsReply" Type="int" Nullable="false" />
+    <Property Name="ReplyPeople" Type="char" MaxLength="32" />
+    <Property Name="ReplyID" Type="char" MaxLength="32" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="Status" Type="int" />
+    <Property Name="IsOwenReader" Type="int" />
+    <Property Name="IsReplyReader" Type="int" />
+  </EntityType>
+  <EntityType Name="Mpr_Hit_Config">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Des" Type="nvarchar" MaxLength="50" />
+    <Property Name="Value" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mpr_InterfaceCall_Log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ip" Type="nvarchar" MaxLength="50" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="InterfaceName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Params" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="Mpr_Live">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="AdminID" Type="int" />
+    <Property Name="UserID" Type="char" MaxLength="32" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pic" Type="nvarchar" MaxLength="500" />
+    <Property Name="SmallPic" Type="nvarchar" MaxLength="500" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="Showtime" Type="datetime" />
+    <Property Name="Status" Type="int" />
+    <Property Name="IsHot" Type="int" Nullable="false" />
+    <Property Name="IsIndex" Type="int" />
+    <Property Name="RewardNum" Type="int" Nullable="false" />
+    <Property Name="RewardPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ForwardNum" Type="int" Nullable="false" />
+    <Property Name="CommentNum" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mpr_Live_Content">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="LiveID" Type="char" MaxLength="32" />
+    <Property Name="LiveHref" Type="nvarchar" MaxLength="2000" />
+    <Property Name="LiveContent" Type="nvarchar" MaxLength="4000" />
+    <Property Name="LivePic" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Addtime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Mpr_Live_HeartBeat">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="UserID" Type="char" MaxLength="32" />
+    <Property Name="LiveRoomID" Type="char" MaxLength="32" />
+    <Property Name="LastTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Mpr_Push_Message">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SendGroup" Type="nvarchar" MaxLength="200" />
+    <Property Name="Conetxt" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="Adduser" Type="int" />
+    <Property Name="Changetime" Type="datetime" />
+    <Property Name="Changeuser" Type="int" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="Mpr_Push_Receive">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="MessageID" Type="int" />
+    <Property Name="UserID" Type="char" MaxLength="32" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="Mpr_Serch_Recommendation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Keyword" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="Adduser" Type="int" />
+  </EntityType>
+  <EntityType Name="Mpr_Strategy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="StrategyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Des" Type="nvarchar" MaxLength="100" />
+    <Property Name="Details" Type="nvarchar(max)" />
+    <Property Name="Tag" Type="nvarchar" MaxLength="200" />
+    <Property Name="SubscribeNum" Type="int" Nullable="false" />
+    <Property Name="ExpectedReturn" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SuccessRate" Type="decimal" Precision="18" Scale="1" />
+    <Property Name="Releasetime" Type="datetime" />
+    <Property Name="Holdingtime" Type="int" />
+    <Property Name="Endtime" Type="datetime" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="IsGood" Type="int" Nullable="false" />
+    <Property Name="IsIndex" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="BuyoutContent" Type="nvarchar(max)" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="Adduser" Type="int" />
+  </EntityType>
+  <EntityType Name="Mpr_Umeng_config">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AppKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="App_Master_Secret" Type="nvarchar" MaxLength="50" />
+    <Property Name="Umeng_Message_Secret" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Mpr_Umeng_Push">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Device_tokens" Type="nvarchar(max)" />
+    <Property Name="Alias_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Alias" Type="nvarchar" MaxLength="1000" />
+    <Property Name="File_id" Type="nvarchar" MaxLength="500" />
+    <Property Name="Payload_display_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Payload_body_ticker" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Payload_body_title" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Payload_body_text" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Payload_body_play_vibrate" Type="nvarchar" MaxLength="50" />
+    <Property Name="Payload_body_play_lights" Type="nvarchar" MaxLength="50" />
+    <Property Name="Payload_body_play_sound" Type="nvarchar" MaxLength="50" />
+    <Property Name="Payload_body_after_open" Type="nvarchar" MaxLength="50" />
+    <Property Name="Payload_body_url" Type="nvarchar" MaxLength="50" />
+    <Property Name="Payload_body_activity" Type="nvarchar" MaxLength="50" />
+    <Property Name="Policy_start_time" Type="nvarchar" MaxLength="50" />
+    <Property Name="Policy_expire_time" Type="nvarchar" MaxLength="50" />
+    <Property Name="Policy_max_send_num" Type="int" />
+    <Property Name="Policy_max_out_biz_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="Payload_aps_alert" Type="nvarchar" MaxLength="50" />
+    <Property Name="Payload_aps_badge" Type="int" Nullable="false" />
+    <Property Name="Payload_aps_content_available" Type="int" />
+    <Property Name="Production_mode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="Thirdparty_id" Type="int" />
+    <Property Name="Ret" Type="nvarchar" MaxLength="50" />
+    <Property Name="Msg_id" Type="nvarchar" MaxLength="200" />
+    <Property Name="Task_id" Type="nvarchar" MaxLength="200" />
+    <Property Name="Error_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rethirdparty_id" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="Adduser" Type="int" />
+  </EntityType>
+  <EntityType Name="Mpr_User_Account">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="char" MaxLength="32" />
+    <Property Name="Income" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Expenditure" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="RewardIncome" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="RewardExpenditure" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SubscribeIncome" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SubscribeExpenditure" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Addtime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Mpr_User_Bill">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="AccountID" Type="int" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="Type" Type="int" />
+    <Property Name="What" Type="nvarchar" MaxLength="50" />
+    <Property Name="Money" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Mpr_User_Bind">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="UserID" Type="char" MaxLength="32" />
+    <Property Name="LoginType" Type="int" />
+    <Property Name="Access_Token" Type="nvarchar" MaxLength="64" />
+    <Property Name="Openid" Type="nvarchar" MaxLength="64" />
+    <Property Name="Nickname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Headimgurl" Type="nvarchar" MaxLength="300" />
+    <Property Name="Sex" Type="int" />
+    <Property Name="Province" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastOperation" Type="int" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="Changetime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Mpr_User_Collection">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="PeopleID" Type="char" MaxLength="32" />
+    <Property Name="NewID" Type="char" MaxLength="32" />
+    <Property Name="Addtime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Mpr_User_Follow">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="FollowPeople" Type="char" MaxLength="32" />
+    <Property Name="ConcernedFollowPeople" Type="char" MaxLength="32" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="Mpr_User_Subscribe">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="SubscribePeople" Type="char" MaxLength="32" />
+    <Property Name="StrategyID" Type="char" MaxLength="32" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="Starttime" Type="datetime" />
+    <Property Name="Endtime" Type="datetime" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="Sys_Admin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UName" Type="nvarchar" MaxLength="100" />
+    <Property Name="TrueName" Type="nvarchar" MaxLength="100" />
+    <Property Name="LoginPwd" Type="nvarchar" MaxLength="100" />
+    <Property Name="RoleID" Type="int" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastLogin" Type="datetime" />
+    <Property Name="LastLoginIP" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsLock" Type="int" />
+    <Property Name="UserID" Type="char" MaxLength="32" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="AdminType" Type="int" />
+  </EntityType>
+  <EntityType Name="Sys_Code">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Type" Type="int" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="Uid" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sys_Error_log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ErrType" Type="nvarchar" MaxLength="200" />
+    <Property Name="ErrMsg" Type="nvarchar(max)" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Ip" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sys_Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ROLENAME" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Ename" Type="nvarchar" MaxLength="50" />
+    <Property Name="ROLEVALUE" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ButtonRole" Type="nvarchar(max)" />
+    <Property Name="NOTE" Type="ntext" />
+    <Property Name="ShowLv" Type="int" />
+  </EntityType>
+  <EntityType Name="Sys_User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="TypeID" Type="int" Nullable="false" />
+    <Property Name="UName" Type="nvarchar" MaxLength="100" />
+    <Property Name="LoginPwd" Type="nvarchar" MaxLength="100" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Linkman" Type="nvarchar" MaxLength="100" />
+    <Property Name="PeopleCard" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sex" Type="int" Nullable="false" />
+    <Property Name="Year" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="300" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="500" />
+    <Property Name="AddTime" Type="datetime" Nullable="false" />
+    <Property Name="Signature" Type="nvarchar" MaxLength="500" />
+    <Property Name="Customer" Type="nvarchar" MaxLength="100" />
+    <Property Name="Tag" Type="nvarchar" MaxLength="50" />
+    <Property Name="Postal" Type="nvarchar" MaxLength="100" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="100" />
+    <Property Name="Bank" Type="nvarchar" MaxLength="200" />
+    <Property Name="RegIP" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastLogin" Type="datetime" />
+    <Property Name="LastLoginIP" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="ErrorCount" Type="int" Nullable="false" />
+    <Property Name="IsPhoneProving" Type="int" Nullable="false" />
+    <Property Name="IsEmailProving" Type="int" Nullable="false" />
+    <Property Name="IsTrueNameProving" Type="int" Nullable="false" />
+    <Property Name="LV" Type="int" />
+    <Property Name="LoginStatus" Type="int" />
+    <Property Name="LastCheckTime" Type="datetime" />
+    <Property Name="InviterCount" Type="int" />
+    <Property Name="FirstRegType" Type="int" />
+    <Property Name="QQ_Token" Type="nvarchar" MaxLength="64" />
+    <Property Name="QQ_Token_LastTime" Type="datetime" />
+    <Property Name="WeChat_Token" Type="nvarchar" MaxLength="64" />
+    <Property Name="WeChat_Token_LastTime" Type="datetime" />
+    <Property Name="FunsNum" Type="int" Nullable="false" />
+    <Property Name="CertificateNum" Type="nvarchar" MaxLength="50" />
+    <Property Name="SharesYear" Type="decimal" Precision="18" Scale="1" Nullable="false" />
+    <Property Name="FollowNum" Type="int" Nullable="false" />
+    <Property Name="IsHot" Type="int" Nullable="false" />
+    <Property Name="HotSort" Type="int" />
+    <Property Name="IsIndex" Type="int" Nullable="false" />
+    <Property Name="IndexSort" Type="int" />
+    <Property Name="SubscribeNum" Type="int" Nullable="false" />
+    <Property Name="MyselfChoiceNum" Type="int" Nullable="false" />
+    <Property Name="PersonalData" Type="nvarchar" MaxLength="4000" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“CRM_Systemject.dbo.View_Collection”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="View_Collection">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="NewID" />
+    </Key>
+    <Property Name="Photo" Type="nvarchar" MaxLength="500" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="ArtDes" Type="nvarchar" MaxLength="100" />
+    <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="NewID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="PeopleID" Type="char" MaxLength="32" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“CRM_Systemject.dbo.View_Comment”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="View_Comment">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="IsReply" />
+      <PropertyRef Name="Comment_User_TypeID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="CommentType" Type="int" />
+    <Property Name="BaseID" Type="char" MaxLength="32" />
+    <Property Name="CommentUserID" Type="char" MaxLength="32" />
+    <Property Name="Context" Type="nvarchar" MaxLength="2000" />
+    <Property Name="IsReply" Type="int" Nullable="false" />
+    <Property Name="ReplyPeople" Type="char" MaxLength="32" />
+    <Property Name="ReplyID" Type="char" MaxLength="32" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="Comment_User_TypeID" Type="int" Nullable="false" />
+    <Property Name="Comment_User_UName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Comment_User_NickName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Reply_User_TypeID" Type="int" />
+    <Property Name="Reply_User_UName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Reply_User_NickName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“CRM_Systemject.dbo.View_Comment_User”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="View_Comment_User">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="CommentType" Type="int" />
+    <Property Name="BaseID" Type="char" MaxLength="32" />
+    <Property Name="BaseOwner" Type="char" MaxLength="32" />
+    <Property Name="CommentUserID" Type="char" MaxLength="32" />
+    <Property Name="Context" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="Status" Type="int" />
+    <Property Name="PersonalData" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="100" />
+    <Property Name="Linkman" Type="nvarchar" MaxLength="100" />
+    <Property Name="ID" Type="char" MaxLength="32" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“CRM_Systemject.dbo.View_News”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="View_News">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Hit" />
+      <PropertyRef Name="Sort" />
+      <PropertyRef Name="IsFirst" />
+      <PropertyRef Name="RewardNum" />
+      <PropertyRef Name="RewardPrice" />
+      <PropertyRef Name="IsIndex" />
+      <PropertyRef Name="IsReward" />
+      <PropertyRef Name="BaseHit" />
+      <PropertyRef Name="ForwardNum" />
+      <PropertyRef Name="CommentNum" />
+      <PropertyRef Name="BaseForward" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="Type" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="ArtDes" Type="nvarchar" MaxLength="100" />
+    <Property Name="ArtContent" Type="nvarchar(max)" />
+    <Property Name="Pic" Type="nvarchar" MaxLength="500" />
+    <Property Name="Hit" Type="int" Nullable="false" />
+    <Property Name="Sort" Type="int" Nullable="false" />
+    <Property Name="IsFirst" Type="int" Nullable="false" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Adduser" Type="int" />
+    <Property Name="RewardNum" Type="int" Nullable="false" />
+    <Property Name="RewardPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="UName" Type="nvarchar" MaxLength="100" />
+    <Property Name="TrueName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserID" Type="char" MaxLength="32" />
+    <Property Name="Sys_User_TypeID" Type="int" />
+    <Property Name="Sys_User_UName" Type="nvarchar" MaxLength="100" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsIndex" Type="int" Nullable="false" />
+    <Property Name="IsReward" Type="int" Nullable="false" />
+    <Property Name="BaseHit" Type="int" Nullable="false" />
+    <Property Name="ForwardNum" Type="int" Nullable="false" />
+    <Property Name="CommentNum" Type="int" Nullable="false" />
+    <Property Name="BaseForward" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“CRM_Systemject.dbo.View_User_Subscribe”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="View_User_Subscribe">
+    <Key>
+      <PropertyRef Name="StrategyID" />
+      <PropertyRef Name="IsGood" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="SubscribePeople" Type="char" MaxLength="32" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Addtime" Type="datetime" />
+    <Property Name="Status" Type="int" />
+    <Property Name="StrategyID" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="Adduser" Type="int" />
+    <Property Name="StrategyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Des" Type="nvarchar" MaxLength="100" />
+    <Property Name="Details" Type="nvarchar(max)" />
+    <Property Name="Tag" Type="nvarchar" MaxLength="200" />
+    <Property Name="SuccessRate" Type="decimal" Precision="18" Scale="1" />
+    <Property Name="Releasetime" Type="datetime" />
+    <Property Name="Holdingtime" Type="int" />
+    <Property Name="Endtime" Type="datetime" />
+    <Property Name="IsGood" Type="int" Nullable="false" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExpectedReturn" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="UserID" Type="char" MaxLength="32" />
+    <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CRM_SystemjectModelStoreContainer">
+    <EntitySet Name="Mpr_Admin_ButtonRole" EntityType="Self.Mpr_Admin_ButtonRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_Admin_Menu" EntityType="Self.Mpr_Admin_Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_Admin_Role" EntityType="Self.Mpr_Admin_Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_APP_Config" EntityType="Self.Mpr_APP_Config" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_Article_Basic" EntityType="Self.Mpr_Article_Basic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_Article_New" EntityType="Self.Mpr_Article_New" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_Banner" EntityType="Self.Mpr_Banner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_Comment" EntityType="Self.Mpr_Comment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_Hit_Config" EntityType="Self.Mpr_Hit_Config" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_InterfaceCall_Log" EntityType="Self.Mpr_InterfaceCall_Log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_Live" EntityType="Self.Mpr_Live" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_Live_Content" EntityType="Self.Mpr_Live_Content" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_Live_HeartBeat" EntityType="Self.Mpr_Live_HeartBeat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_Push_Message" EntityType="Self.Mpr_Push_Message" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_Push_Receive" EntityType="Self.Mpr_Push_Receive" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_Serch_Recommendation" EntityType="Self.Mpr_Serch_Recommendation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_Strategy" EntityType="Self.Mpr_Strategy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_Umeng_config" EntityType="Self.Mpr_Umeng_config" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_Umeng_Push" EntityType="Self.Mpr_Umeng_Push" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_User_Account" EntityType="Self.Mpr_User_Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_User_Bill" EntityType="Self.Mpr_User_Bill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_User_Bind" EntityType="Self.Mpr_User_Bind" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_User_Collection" EntityType="Self.Mpr_User_Collection" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_User_Follow" EntityType="Self.Mpr_User_Follow" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mpr_User_Subscribe" EntityType="Self.Mpr_User_Subscribe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sys_Admin" EntityType="Self.Sys_Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sys_Code" EntityType="Self.Sys_Code" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sys_Error_log" EntityType="Self.Sys_Error_log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sys_Role" EntityType="Self.Sys_Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sys_User" EntityType="Self.Sys_User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="View_Collection" EntityType="Self.View_Collection" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_Collection].[Photo] AS [Photo], 
+[View_Collection].[NickName] AS [NickName], 
+[View_Collection].[Addtime] AS [Addtime], 
+[View_Collection].[Title] AS [Title], 
+[View_Collection].[ArtDes] AS [ArtDes], 
+[View_Collection].[ID] AS [ID], 
+[View_Collection].[NewID] AS [NewID], 
+[View_Collection].[PeopleID] AS [PeopleID]
+FROM [dbo].[View_Collection] AS [View_Collection]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Comment" EntityType="Self.View_Comment" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_Comment].[ID] AS [ID], 
+[View_Comment].[CommentType] AS [CommentType], 
+[View_Comment].[BaseID] AS [BaseID], 
+[View_Comment].[CommentUserID] AS [CommentUserID], 
+[View_Comment].[Context] AS [Context], 
+[View_Comment].[IsReply] AS [IsReply], 
+[View_Comment].[ReplyPeople] AS [ReplyPeople], 
+[View_Comment].[ReplyID] AS [ReplyID], 
+[View_Comment].[Addtime] AS [Addtime], 
+[View_Comment].[Comment_User_TypeID] AS [Comment_User_TypeID], 
+[View_Comment].[Comment_User_UName] AS [Comment_User_UName], 
+[View_Comment].[Comment_User_NickName] AS [Comment_User_NickName], 
+[View_Comment].[Reply_User_TypeID] AS [Reply_User_TypeID], 
+[View_Comment].[Reply_User_UName] AS [Reply_User_UName], 
+[View_Comment].[Reply_User_NickName] AS [Reply_User_NickName], 
+[View_Comment].[Status] AS [Status]
+FROM [dbo].[View_Comment] AS [View_Comment]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Comment_User" EntityType="Self.View_Comment_User" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_Comment_User].[CommentID] AS [CommentID], 
+[View_Comment_User].[CommentType] AS [CommentType], 
+[View_Comment_User].[BaseID] AS [BaseID], 
+[View_Comment_User].[BaseOwner] AS [BaseOwner], 
+[View_Comment_User].[CommentUserID] AS [CommentUserID], 
+[View_Comment_User].[Context] AS [Context], 
+[View_Comment_User].[Addtime] AS [Addtime], 
+[View_Comment_User].[Status] AS [Status], 
+[View_Comment_User].[PersonalData] AS [PersonalData], 
+[View_Comment_User].[Phone] AS [Phone], 
+[View_Comment_User].[Linkman] AS [Linkman], 
+[View_Comment_User].[ID] AS [ID]
+FROM [dbo].[View_Comment_User] AS [View_Comment_User]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_News" EntityType="Self.View_News" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_News].[ID] AS [ID], 
+[View_News].[Type] AS [Type], 
+[View_News].[Title] AS [Title], 
+[View_News].[ArtDes] AS [ArtDes], 
+[View_News].[ArtContent] AS [ArtContent], 
+[View_News].[Pic] AS [Pic], 
+[View_News].[Hit] AS [Hit], 
+[View_News].[Sort] AS [Sort], 
+[View_News].[IsFirst] AS [IsFirst], 
+[View_News].[Addtime] AS [Addtime], 
+[View_News].[Status] AS [Status], 
+[View_News].[Adduser] AS [Adduser], 
+[View_News].[RewardNum] AS [RewardNum], 
+[View_News].[RewardPrice] AS [RewardPrice], 
+[View_News].[UName] AS [UName], 
+[View_News].[TrueName] AS [TrueName], 
+[View_News].[Phone] AS [Phone], 
+[View_News].[Email] AS [Email], 
+[View_News].[UserID] AS [UserID], 
+[View_News].[Sys_User_TypeID] AS [Sys_User_TypeID], 
+[View_News].[Sys_User_UName] AS [Sys_User_UName], 
+[View_News].[NickName] AS [NickName], 
+[View_News].[Photo] AS [Photo], 
+[View_News].[IsIndex] AS [IsIndex], 
+[View_News].[IsReward] AS [IsReward], 
+[View_News].[BaseHit] AS [BaseHit], 
+[View_News].[ForwardNum] AS [ForwardNum], 
+[View_News].[CommentNum] AS [CommentNum], 
+[View_News].[BaseForward] AS [BaseForward]
+FROM [dbo].[View_News] AS [View_News]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_User_Subscribe" EntityType="Self.View_User_Subscribe" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[View_User_Subscribe].[SubscribePeople] AS [SubscribePeople], 
+[View_User_Subscribe].[Price] AS [Price], 
+[View_User_Subscribe].[Addtime] AS [Addtime], 
+[View_User_Subscribe].[Status] AS [Status], 
+[View_User_Subscribe].[StrategyID] AS [StrategyID], 
+[View_User_Subscribe].[Adduser] AS [Adduser], 
+[View_User_Subscribe].[StrategyName] AS [StrategyName], 
+[View_User_Subscribe].[Des] AS [Des], 
+[View_User_Subscribe].[Details] AS [Details], 
+[View_User_Subscribe].[Tag] AS [Tag], 
+[View_User_Subscribe].[SuccessRate] AS [SuccessRate], 
+[View_User_Subscribe].[Releasetime] AS [Releasetime], 
+[View_User_Subscribe].[Holdingtime] AS [Holdingtime], 
+[View_User_Subscribe].[Endtime] AS [Endtime], 
+[View_User_Subscribe].[IsGood] AS [IsGood], 
+[View_User_Subscribe].[NickName] AS [NickName], 
+[View_User_Subscribe].[ExpectedReturn] AS [ExpectedReturn], 
+[View_User_Subscribe].[UserID] AS [UserID], 
+[View_User_Subscribe].[ID] AS [ID]
+FROM [dbo].[View_User_Subscribe] AS [View_User_Subscribe]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

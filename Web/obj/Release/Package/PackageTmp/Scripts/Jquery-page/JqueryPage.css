@@ -1,0 +1,33 @@
+﻿.OptionPagerList {
+   width:100%;
+    text-align:center;
+   
+}
+
+.OptionPagerList span{
+  padding-left:0.5%;
+  padding-right:0.5%;
+  font-size:13px;
+}
+.OptionPagerList a{
+  padding-left:0.5%;
+  padding-right:0.5%;
+  text-decoration:none;
+  color:gray;
+  font-size:13px;
+}
+.OptionPagerList .nextPage{
+     width:100px;
+     height:30px;
+  }
+  .OptionPagerList .current {
+   color:red;
+  }
+ .OptionPagerList .disabled {
+      color:gray;
+ }
+
+.changeselect {
+  width:50px;
+  height:25px;
+}

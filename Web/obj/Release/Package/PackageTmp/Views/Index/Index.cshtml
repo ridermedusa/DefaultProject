@@ -1,0 +1,139 @@
+﻿@using PagedList.Mvc;  
+@{  
+        ViewBag.Title = "E-Training";  
+}  
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>E-Training System - Login</title>
+    <link rel="stylesheet" type="text/css" href="/Content/E_Training/css/login.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/E_Training/css/loginIconfont.css"/>
+    <script type="text/javascript" src="/Content/E_Training/js/jquery/jquery.min.js" ></script>
+	<script type="text/javascript" src="/Content/E_Training/js/blurjs/blurjs.js" ></script>
+    <script type="text/javascript">
+        $(function () {
+            setBgImg();
+            $(".favourite").click(function () {
+                try {
+                    window.external.AddFavorite(location.href, document.title);
+                    $(this).addClass("favourite");
+                } catch (e) {
+                    try {
+                        window.sidebar.addPanel(location.href, document.title, '');
+                        $(this).addClass("favourite");
+                    } catch (e) {
+                        alert($(this).data("msg"));
+                    }
+                }
+            });
+
+            $(".wrapper > input").each(function () {
+                var label = $($(this).parent()).find("label");
+                $(this).focus(function () {
+                    label.addClass("actived");
+                });
+                $(this).blur(function () {
+                    label.removeClass("actived");
+                });
+            });
+        });
+
+        /*function setBgImg(){
+            var mainContainer = $("#mainContainer");
+            var mainContainerClass;
+            if (Math.floor(Math.random() * 100) % 2 == 0) {
+                mainContainerClass = "MainContent1";
+            } else {
+                mainContainerClass = "MainContent2"; 
+            }
+            mainContainer.addClass(mainContainerClass);
+        }*/
+        function setBgImg() {
+            var mainContainer = jQuery("#mainContainer");
+            var mainContainerClass;
+            var bgImgName;
+            if (Math.floor(Math.random() * 100) % 2 == 0) {
+                mainContainerClass = "MainContent1";
+                bgImgName = "admin_bg1.jpg";
+            } else {
+                mainContainerClass = "MainContent2";
+                bgImgName = "admin_bg2.jpg";
+            }
+            var filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + location.protocol
+                                 + "//" + location.host + "/images/" + bgImgName + "', sizingMethod='scale')";
+            mainContainer.addClass(mainContainerClass);
+            mainContainer.css("filter", filter);
+            $(".aside-blur").blurjs({
+                source: '.MainContent',  //模糊背景的selector
+                radius: 20,               //模糊半径
+                cacheExpired: 30 * 1000,        //本地存储的超时时间，毫秒
+                //             overlay: 'rgba(0, 0, 0, 0.15)', //设置覆盖层
+                cache: false             //设置缓存
+            });
+        }
+
+    </script>
+</head>
+<body>
+    <div class="MainContent" id="mainContainer"></div>
+    <div class="main">
+        <div class="leftContent">
+            <div class="Logo"></div>
+            <div class="version">
+                <img src="images/ots.png" width="355" height="100" border="0" alt=""><br />
+				<span>引领教学体验&nbsp;&nbsp;&nbsp;&nbsp;改变创造价值</span>
+            </div>
+            <div class="footer">
+                <div class="content">
+                    <div class="copyright">
+                        <a target="_blank" href="javascript:void(0);">P&amp;G. &copy; Copyright 2000 - 2016 Data information. </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="aside-blur"></div>
+        <div class="aside-blur2 transparent"></div>
+        <div class="aside">
+            <div class="loginArea logArea" id="logArea">
+                <div class="loginType">
+                    <div class="f-fl">
+                        <div style="font-weight: bold;font-size: 14px">管理员登录</div>
+                    </div>
+                </div>
+                <form action="home.asp" method="post">
+                    <div class="u-form">
+                        <input type="hidden" name="locale" id="locale" value="zh_CN"/>
+                        <span class="arrow"></span>
+                        <div class="inputArea">
+                            <!-- uid -->
+                            <div class="u-form-item u-form-item-1 forUid">
+                                <div class="wrapper">
+                                    <label class="label"><i class="iconfont iconhead"></i></label>
+                                    <input class="u-input" type="text" name="uid" autocomplete="off" style="background: #FFFFFF" id="uid" tabindex="1" value=""/>
+                                </div>
+                            </div>
+                            <!-- password -->
+                            <div class="u-form-item u-form-item-1 forPassword">
+                                <div class="wrapper">
+                                    <label class="label"><i class="iconfont iconlock"></i></label>
+                                    <input class="u-input" type="password" name="password" style="background: #FFFFFF" autocomplete="off" tabindex="2"
+                                           value=""/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="u-form-item u-form-item-2 u-btn inptr loginButton submit" style="margin-top: 15px">
+                            <input type="submit" name="submit" class="button u-btn" style="background: transparent; height: 100%; color: #fff" tabindex="0" value="登 录"/>
+                        </div>
+                        <div class="u-form-item u-form-item-2 errMsg">
+                            <label></label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

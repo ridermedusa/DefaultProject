@@ -1,0 +1,626 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CRM_System.Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CRM_SystemEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Mpr_Admin_ButtonRole" EntityType="CRM_System.Model.Mpr_Admin_ButtonRole" />
+    <EntitySet Name="Mpr_Admin_Menu" EntityType="CRM_System.Model.Mpr_Admin_Menu" />
+    <EntitySet Name="Mpr_Admin_Role" EntityType="CRM_System.Model.Mpr_Admin_Role" />
+    <EntitySet Name="Mpr_APP_Config" EntityType="CRM_System.Model.Mpr_APP_Config" />
+    <EntitySet Name="Mpr_Article_Basic" EntityType="CRM_System.Model.Mpr_Article_Basic" />
+    <EntitySet Name="Mpr_Article_New" EntityType="CRM_System.Model.Mpr_Article_New" />
+    <EntitySet Name="Mpr_Banner" EntityType="CRM_System.Model.Mpr_Banner" />
+    <EntitySet Name="Mpr_Comment" EntityType="CRM_System.Model.Mpr_Comment" />
+    <EntitySet Name="Mpr_Hit_Config" EntityType="CRM_System.Model.Mpr_Hit_Config" />
+    <EntitySet Name="Mpr_InterfaceCall_Log" EntityType="CRM_System.Model.Mpr_InterfaceCall_Log" />
+    <EntitySet Name="Mpr_Live" EntityType="CRM_System.Model.Mpr_Live" />
+    <EntitySet Name="Mpr_Live_Content" EntityType="CRM_System.Model.Mpr_Live_Content" />
+    <EntitySet Name="Mpr_Live_HeartBeat" EntityType="CRM_System.Model.Mpr_Live_HeartBeat" />
+    <EntitySet Name="Mpr_Push_Message" EntityType="CRM_System.Model.Mpr_Push_Message" />
+    <EntitySet Name="Mpr_Push_Receive" EntityType="CRM_System.Model.Mpr_Push_Receive" />
+    <EntitySet Name="Mpr_Serch_Recommendation" EntityType="CRM_System.Model.Mpr_Serch_Recommendation" />
+    <EntitySet Name="Mpr_Strategy" EntityType="CRM_System.Model.Mpr_Strategy" />
+    <EntitySet Name="Mpr_Umeng_config" EntityType="CRM_System.Model.Mpr_Umeng_config" />
+    <EntitySet Name="Mpr_Umeng_Push" EntityType="CRM_System.Model.Mpr_Umeng_Push" />
+    <EntitySet Name="Mpr_User_Account" EntityType="CRM_System.Model.Mpr_User_Account" />
+    <EntitySet Name="Mpr_User_Bill" EntityType="CRM_System.Model.Mpr_User_Bill" />
+    <EntitySet Name="Mpr_User_Bind" EntityType="CRM_System.Model.Mpr_User_Bind" />
+    <EntitySet Name="Mpr_User_Collection" EntityType="CRM_System.Model.Mpr_User_Collection" />
+    <EntitySet Name="Mpr_User_Follow" EntityType="CRM_System.Model.Mpr_User_Follow" />
+    <EntitySet Name="Mpr_User_Subscribe" EntityType="CRM_System.Model.Mpr_User_Subscribe" />
+    <EntitySet Name="Sys_Admin" EntityType="CRM_System.Model.Sys_Admin" />
+    <EntitySet Name="Sys_Code" EntityType="CRM_System.Model.Sys_Code" />
+    <EntitySet Name="Sys_Error_log" EntityType="CRM_System.Model.Sys_Error_log" />
+    <EntitySet Name="Sys_Role" EntityType="CRM_System.Model.Sys_Role" />
+    <EntitySet Name="Sys_User" EntityType="CRM_System.Model.Sys_User" />
+    <EntitySet Name="View_Collection" EntityType="CRM_System.Model.View_Collection" />
+    <EntitySet Name="View_Comment" EntityType="CRM_System.Model.View_Comment" />
+    <EntitySet Name="View_Comment_User" EntityType="CRM_System.Model.View_Comment_User" />
+    <EntitySet Name="View_News" EntityType="CRM_System.Model.View_News" />
+    <EntitySet Name="View_User_Subscribe" EntityType="CRM_System.Model.View_User_Subscribe" />
+  </EntityContainer>
+  <EntityType Name="Mpr_Admin_ButtonRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PageID" Type="Int32" />
+    <Property Name="Operation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ButtonName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Roletype" Type="Int32" />
+    <Property Name="OnlyStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Mpr_Admin_Menu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RightUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RightName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Ename" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="AddTime" Type="DateTime" Precision="3" />
+    <Property Name="RightParent" Type="Int32" />
+    <Property Name="controller" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="action" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsButton" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Mpr_Admin_Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="PageID" Type="Int32" />
+    <Property Name="ButtonIDCollection" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="AddTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Mpr_APP_Config">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Version" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Android_Url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Ios_Url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ChangeTime" Type="DateTime" Precision="3" />
+    <Property Name="ChangeUser" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Mpr_Article_Basic">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ArtContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="Adduser" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Mpr_Article_New">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ArtDes" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="ArtContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Pic" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="BaseHit" Type="Int32" Nullable="false" />
+    <Property Name="Hit" Type="Int32" Nullable="false" />
+    <Property Name="BaseForward" Type="Int32" Nullable="false" />
+    <Property Name="Sort" Type="Int32" Nullable="false" />
+    <Property Name="IsFirst" Type="Int32" Nullable="false" />
+    <Property Name="IsIndex" Type="Int32" Nullable="false" />
+    <Property Name="IsReward" Type="Int32" Nullable="false" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Adduser" Type="Int32" />
+    <Property Name="RewardNum" Type="Int32" Nullable="false" />
+    <Property Name="RewardPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="ForwardNum" Type="Int32" Nullable="false" />
+    <Property Name="CommentNum" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mpr_Banner">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="Url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="LinkUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LinkName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LinkType" Type="Int32" />
+    <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Params" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="Adduser" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Mpr_Comment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="CommentType" Type="Int32" />
+    <Property Name="BaseID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="BaseOwner" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="CommentUserID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Context" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="IsReply" Type="Int32" Nullable="false" />
+    <Property Name="ReplyPeople" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="ReplyID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="IsOwenReader" Type="Int32" />
+    <Property Name="IsReplyReader" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Mpr_Hit_Config">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Des" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Value" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mpr_InterfaceCall_Log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="InterfaceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Params" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Mpr_Live">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="AdminID" Type="Int32" />
+    <Property Name="UserID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pic" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SmallPic" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="Showtime" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="IsHot" Type="Int32" Nullable="false" />
+    <Property Name="IsIndex" Type="Int32" />
+    <Property Name="RewardNum" Type="Int32" Nullable="false" />
+    <Property Name="RewardPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="ForwardNum" Type="Int32" Nullable="false" />
+    <Property Name="CommentNum" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mpr_Live_Content">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="LiveID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="LiveHref" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="LiveContent" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="LivePic" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Mpr_Live_HeartBeat">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="UserID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="LiveRoomID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="LastTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Mpr_Push_Message">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SendGroup" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Conetxt" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="Adduser" Type="Int32" />
+    <Property Name="Changetime" Type="DateTime" Precision="3" />
+    <Property Name="Changeuser" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Mpr_Push_Receive">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="MessageID" Type="Int32" />
+    <Property Name="UserID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Mpr_Serch_Recommendation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Keyword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="Adduser" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Mpr_Strategy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="StrategyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Des" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tag" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SubscribeNum" Type="Int32" Nullable="false" />
+    <Property Name="ExpectedReturn" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SuccessRate" Type="Decimal" Precision="18" Scale="1" />
+    <Property Name="Releasetime" Type="DateTime" Precision="3" />
+    <Property Name="Holdingtime" Type="Int32" />
+    <Property Name="Endtime" Type="DateTime" Precision="3" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IsGood" Type="Int32" Nullable="false" />
+    <Property Name="IsIndex" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="BuyoutContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="Adduser" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Mpr_Umeng_config">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AppKey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="App_Master_Secret" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Umeng_Message_Secret" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Mpr_Umeng_Push">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Device_tokens" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Alias_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Alias" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="File_id" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Payload_display_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Payload_body_ticker" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Payload_body_title" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Payload_body_text" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Payload_body_play_vibrate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Payload_body_play_lights" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Payload_body_play_sound" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Payload_body_after_open" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Payload_body_url" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Payload_body_activity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Policy_start_time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Policy_expire_time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Policy_max_send_num" Type="Int32" />
+    <Property Name="Policy_max_out_biz_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Payload_aps_alert" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Payload_aps_badge" Type="Int32" Nullable="false" />
+    <Property Name="Payload_aps_content_available" Type="Int32" />
+    <Property Name="Production_mode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Thirdparty_id" Type="Int32" />
+    <Property Name="Ret" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Msg_id" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Task_id" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Error_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Rethirdparty_id" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="Adduser" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Mpr_User_Account">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Income" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Expenditure" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="RewardIncome" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="RewardExpenditure" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SubscribeIncome" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SubscribeExpenditure" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Mpr_User_Bill">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="AccountID" Type="Int32" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="What" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Money" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Mpr_User_Bind">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="UserID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="LoginType" Type="Int32" />
+    <Property Name="Access_Token" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="Openid" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="Nickname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Headimgurl" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Sex" Type="Int32" />
+    <Property Name="Province" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastOperation" Type="Int32" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="Changetime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Mpr_User_Collection">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="PeopleID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="NewID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Mpr_User_Follow">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="FollowPeople" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="ConcernedFollowPeople" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Mpr_User_Subscribe">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="SubscribePeople" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="StrategyID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="Starttime" Type="DateTime" Precision="3" />
+    <Property Name="Endtime" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Sys_Admin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TrueName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LoginPwd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastLogin" Type="DateTime" Precision="3" />
+    <Property Name="LastLoginIP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IsLock" Type="Int32" />
+    <Property Name="UserID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="AdminType" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Sys_Code">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="Uid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Sys_Error_log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ErrType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ErrMsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Sys_Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ROLENAME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Ename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ROLEVALUE" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ButtonRole" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NOTE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ShowLv" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Sys_User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="TypeID" Type="Int32" Nullable="false" />
+    <Property Name="UName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LoginPwd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Linkman" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PeopleCard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sex" Type="Int32" Nullable="false" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="Address" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Photo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="AddTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Signature" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Customer" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Tag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Postal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Bank" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="RegIP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastLogin" Type="DateTime" Precision="3" />
+    <Property Name="LastLoginIP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="ErrorCount" Type="Int32" Nullable="false" />
+    <Property Name="IsPhoneProving" Type="Int32" Nullable="false" />
+    <Property Name="IsEmailProving" Type="Int32" Nullable="false" />
+    <Property Name="IsTrueNameProving" Type="Int32" Nullable="false" />
+    <Property Name="LV" Type="Int32" />
+    <Property Name="LoginStatus" Type="Int32" />
+    <Property Name="LastCheckTime" Type="DateTime" Precision="3" />
+    <Property Name="InviterCount" Type="Int32" />
+    <Property Name="FirstRegType" Type="Int32" />
+    <Property Name="QQ_Token" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="QQ_Token_LastTime" Type="DateTime" Precision="3" />
+    <Property Name="WeChat_Token" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="WeChat_Token_LastTime" Type="DateTime" Precision="3" />
+    <Property Name="FunsNum" Type="Int32" Nullable="false" />
+    <Property Name="CertificateNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SharesYear" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
+    <Property Name="FollowNum" Type="Int32" Nullable="false" />
+    <Property Name="IsHot" Type="Int32" Nullable="false" />
+    <Property Name="HotSort" Type="Int32" />
+    <Property Name="IsIndex" Type="Int32" Nullable="false" />
+    <Property Name="IndexSort" Type="Int32" />
+    <Property Name="SubscribeNum" Type="Int32" Nullable="false" />
+    <Property Name="MyselfChoiceNum" Type="Int32" Nullable="false" />
+    <Property Name="PersonalData" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_Collection">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="NewID" />
+    </Key>
+    <Property Name="Photo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ArtDes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="NewID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="PeopleID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="View_Comment">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="IsReply" />
+      <PropertyRef Name="Comment_User_TypeID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="CommentType" Type="Int32" />
+    <Property Name="BaseID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="CommentUserID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Context" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="IsReply" Type="Int32" Nullable="false" />
+    <Property Name="ReplyPeople" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="ReplyID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="Comment_User_TypeID" Type="Int32" Nullable="false" />
+    <Property Name="Comment_User_UName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Comment_User_NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reply_User_TypeID" Type="Int32" />
+    <Property Name="Reply_User_UName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Reply_User_NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="View_Comment_User">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="CommentType" Type="Int32" />
+    <Property Name="BaseID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="BaseOwner" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="CommentUserID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Context" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="PersonalData" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Linkman" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="View_News">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Hit" />
+      <PropertyRef Name="Sort" />
+      <PropertyRef Name="IsFirst" />
+      <PropertyRef Name="RewardNum" />
+      <PropertyRef Name="RewardPrice" />
+      <PropertyRef Name="IsIndex" />
+      <PropertyRef Name="IsReward" />
+      <PropertyRef Name="BaseHit" />
+      <PropertyRef Name="ForwardNum" />
+      <PropertyRef Name="CommentNum" />
+      <PropertyRef Name="BaseForward" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ArtDes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ArtContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Pic" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Hit" Type="Int32" Nullable="false" />
+    <Property Name="Sort" Type="Int32" Nullable="false" />
+    <Property Name="IsFirst" Type="Int32" Nullable="false" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Adduser" Type="Int32" />
+    <Property Name="RewardNum" Type="Int32" Nullable="false" />
+    <Property Name="RewardPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="UName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TrueName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Sys_User_TypeID" Type="Int32" />
+    <Property Name="Sys_User_UName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Photo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsIndex" Type="Int32" Nullable="false" />
+    <Property Name="IsReward" Type="Int32" Nullable="false" />
+    <Property Name="BaseHit" Type="Int32" Nullable="false" />
+    <Property Name="ForwardNum" Type="Int32" Nullable="false" />
+    <Property Name="CommentNum" Type="Int32" Nullable="false" />
+    <Property Name="BaseForward" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_User_Subscribe">
+    <Key>
+      <PropertyRef Name="StrategyID" />
+      <PropertyRef Name="IsGood" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="SubscribePeople" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="StrategyID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Adduser" Type="Int32" />
+    <Property Name="StrategyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Des" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tag" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SuccessRate" Type="Decimal" Precision="18" Scale="1" />
+    <Property Name="Releasetime" Type="DateTime" Precision="3" />
+    <Property Name="Holdingtime" Type="Int32" />
+    <Property Name="Endtime" Type="DateTime" Precision="3" />
+    <Property Name="IsGood" Type="Int32" Nullable="false" />
+    <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ExpectedReturn" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="UserID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+  </EntityType>
+</Schema>

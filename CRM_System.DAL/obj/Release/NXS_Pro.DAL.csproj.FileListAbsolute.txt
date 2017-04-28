@@ -1,0 +1,17 @@
+E:\Work\N牛小散_Web\CRM_System.DAL\bin\Release\CRM_System.DAL.dll.config
+E:\Work\N牛小散_Web\CRM_System.DAL\bin\Release\CRM_System.DAL.dll
+E:\Work\N牛小散_Web\CRM_System.DAL\bin\Release\CRM_System.DAL.pdb
+E:\Work\N牛小散_Web\CRM_System.DAL\bin\Release\EntityFramework.dll
+E:\Work\N牛小散_Web\CRM_System.DAL\bin\Release\Newtonsoft.Json.dll
+E:\Work\N牛小散_Web\CRM_System.DAL\bin\Release\CRM_System.Model.dll
+E:\Work\N牛小散_Web\CRM_System.DAL\bin\Release\PagedList.dll
+E:\Work\N牛小散_Web\CRM_System.DAL\bin\Release\PagedList.Mvc.dll
+E:\Work\N牛小散_Web\CRM_System.DAL\bin\Release\CRM_System.Model.pdb
+E:\Work\N牛小散_Web\CRM_System.DAL\bin\Release\EntityFramework.xml
+E:\Work\N牛小散_Web\CRM_System.DAL\bin\Release\Newtonsoft.Json.xml
+E:\Work\N牛小散_Web\CRM_System.DAL\bin\Release\PagedList.xml
+E:\Work\N牛小散_Web\CRM_System.DAL\bin\Release\PagedList.Mvc.xml
+E:\Work\N牛小散_Web\CRM_System.DAL\bin\Release\zh-Hans\EntityFramework.resources.dll
+E:\Work\N牛小散_Web\CRM_System.DAL\obj\Release\CRM_System.DAL.csprojResolveAssemblyReference.cache
+E:\Work\N牛小散_Web\CRM_System.DAL\obj\Release\CRM_System.DAL.dll
+E:\Work\N牛小散_Web\CRM_System.DAL\obj\Release\CRM_System.DAL.pdb

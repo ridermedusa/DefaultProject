@@ -1,0 +1,17 @@
+E:\Work\CRMSystem\CRM_System.DAL\bin\Debug\CRM_System.DAL.dll.config
+E:\Work\CRMSystem\CRM_System.DAL\bin\Debug\CRM_System.DAL.dll
+E:\Work\CRMSystem\CRM_System.DAL\bin\Debug\CRM_System.DAL.pdb
+E:\Work\CRMSystem\CRM_System.DAL\bin\Debug\CRM_System.Model.dll
+E:\Work\CRMSystem\CRM_System.DAL\bin\Debug\EntityFramework.dll
+E:\Work\CRMSystem\CRM_System.DAL\bin\Debug\Newtonsoft.Json.dll
+E:\Work\CRMSystem\CRM_System.DAL\bin\Debug\PagedList.dll
+E:\Work\CRMSystem\CRM_System.DAL\bin\Debug\PagedList.Mvc.dll
+E:\Work\CRMSystem\CRM_System.DAL\bin\Debug\CRM_System.Model.pdb
+E:\Work\CRMSystem\CRM_System.DAL\bin\Debug\EntityFramework.xml
+E:\Work\CRMSystem\CRM_System.DAL\bin\Debug\Newtonsoft.Json.xml
+E:\Work\CRMSystem\CRM_System.DAL\bin\Debug\PagedList.xml
+E:\Work\CRMSystem\CRM_System.DAL\bin\Debug\PagedList.Mvc.xml
+E:\Work\CRMSystem\CRM_System.DAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\Work\CRMSystem\CRM_System.DAL\obj\Debug\CRM_System.DAL.csprojResolveAssemblyReference.cache
+E:\Work\CRMSystem\CRM_System.DAL\obj\Debug\CRM_System.DAL.dll
+E:\Work\CRMSystem\CRM_System.DAL\obj\Debug\CRM_System.DAL.pdb

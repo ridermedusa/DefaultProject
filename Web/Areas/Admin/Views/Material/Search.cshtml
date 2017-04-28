@@ -1,0 +1,25 @@
+﻿@model List<CRM_System.Model.Mpr_Material>
+@{
+    ViewBag.Title = "Search";
+    int Mi = 1;
+}
+<style>
+    b {
+    color:red;
+    }
+</style>
+搜索时间：@(ViewBag.DB)毫秒
+
+<table style="width:100%;" border="1" cellspacing="0" >
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="width:10%; text-align:center;">@(Mi)</td>
+            <td style="width:20%;">@Html.Raw(item.Title)</td>
+            <td>@Html.Raw(item.Context)</td>
+            <td style="width:15%;">@(item.AddTime)</td>
+        </tr>
+
+        Mi++;
+    }
+</table>

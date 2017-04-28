@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "AdminRole";
+}
+<div id="page" class="con_right">
+    <div class="con_right0">
+        <div class="con_right1 pull-left">
+            <span class="pull-left"><img src="/Content/CRM_System/images/ico1.jpg"></span>
+            <h3 class="pull-left">菜单管理</h3>
+        </div>
+        <div class="con_right2 pull-right">
+            <ol class="breadcrumb">
+                <li><a href="javascript:parent.location.href='/'">Home</a></li>
+                <li><a href="javascript:void(0);">系统管理</a></li>
+                <li class="active"><a href="/admin/Menu">菜单管理</a></li>
+            </ol>
+        </div>
+        <div class="clearfix"></div>
+    </div>  
+    <div class="ser">
+        <div class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="名称" name="keyword" id="keyword" />
+            </div>
+            <button class="btn btn-default" id="Serchbtn" name="roleser">搜索</button>
+            <button class="btn btn-default" name="roleadd">添加</button>
+        </div>
+    </div>
+
+
+
+    <div class="con_right3">
+        <table class="table table-hover table-bordered table-responsive" id="table">
+            <thead>
+                <tr class="info first">
+                    <th style="text-align:center; width:50px;" title="名称">菜单名称</th> 
+                    <th style="text-align:center; width:150px;" title="添加时间">Add time</th>
+                    <th style="text-align:center; width:200px;" title="操作">操作</th>
+                </tr>
+            </thead>
+            <tbody style="text-align: center" id="GetBody"></tbody>
+        </table>
+    </div>
+    <!--分页开始-->
+    <div class="OptionPagerList"></div>
+</div>
+<input type="hidden" value="@(ViewBag.pagecount)" id="pagecount" name="pagecount" />
+<input type="hidden" value="@(ViewBag.ALLitemcount)" id="ALLitemcount" name="ALLitemcount" />
+<!-- Content Header (Page header) -->
+
+<link href="/Content/Admin/js/Jquery-page/JqueryPage.css" rel="stylesheet" />
+<script src="/Content/Admin/js/Jquery-page/jquery.page.js?1232"></script>
+<script src="/Areas/Admin/Script/Menu/MenuIndex.js?v1"></script>
+
+
+
+

@@ -1,0 +1,17 @@
+F:\Work\N牛小散\CRM_System.Model\bin\Debug\CRM_System.Model.dll.config
+F:\Work\N牛小散\CRM_System.Model\bin\Debug\CRM_System.Model.dll
+F:\Work\N牛小散\CRM_System.Model\bin\Debug\CRM_System.Model.pdb
+F:\Work\N牛小散\CRM_System.Model\bin\Debug\EntityFramework.dll
+F:\Work\N牛小散\CRM_System.Model\bin\Debug\EntityFramework.xml
+F:\Work\N牛小散\CRM_System.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+F:\Work\N牛小散\CRM_System.Model\obj\Debug\CRM_System.Model.dll
+F:\Work\N牛小散\CRM_System.Model\obj\Debug\CRM_System.Model.pdb
+E:\Work\N牛小散_Web\CRM_System.Model\bin\Debug\CRM_System.Model.dll.config
+E:\Work\N牛小散_Web\CRM_System.Model\bin\Debug\CRM_System.Model.dll
+E:\Work\N牛小散_Web\CRM_System.Model\bin\Debug\CRM_System.Model.pdb
+E:\Work\N牛小散_Web\CRM_System.Model\bin\Debug\EntityFramework.dll
+E:\Work\N牛小散_Web\CRM_System.Model\bin\Debug\EntityFramework.xml
+E:\Work\N牛小散_Web\CRM_System.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\Work\N牛小散_Web\CRM_System.Model\obj\Debug\CRM_System.Model.dll
+E:\Work\N牛小散_Web\CRM_System.Model\obj\Debug\CRM_System.Model.pdb
+E:\Work\N牛小散_Web\CRM_System.Model\obj\Debug\CRM_System.Model.csprojResolveAssemblyReference.cache

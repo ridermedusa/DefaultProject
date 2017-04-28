@@ -1,0 +1,38 @@
+﻿@model CRM_System.Model.Mpr_Basic_Params
+@{
+    ViewBag.Title = "基础信息维护";
+}
+<script src="~/Areas/Admin/Script/BasicParams/Edit.js?@(new Random().Next(10000))"></script>
+<div class="col-md-12" style="margin-top:15px;">
+    <div class="box box-primary">
+        <div class="box-header">
+            <h3 class="box-title" title="">基础信息维护</h3>
+        </div>
+        <div class="box-body" style="padding-top:10px;">
+            <div class="form-group">
+                <label for="exampleInputEmail1" title="参数类型">参数类型:</label>
+                <select id="BasicType" name="BasicType" class="form-control" style="width:30%;">
+                      @foreach (int item in Enum.GetValues(typeof(CRM_System.BLL.BasicType)))
+                      {
+                          if (Model.BasicType == item)
+                          {
+                            <option value="@(item)" selected="selected">@((CRM_System.BLL.BasicType)item)</option>
+                          }
+                          else
+                          {
+                            <option value="@(item)">@((CRM_System.BLL.BasicType)item)</option>
+                          }
+                      }
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1" title="参数内容">参数内容:</label>
+                <input type="text" class="form-control" style="width:50%;" id="ParamsName" name="ParamsName" placeholder="Enter..." value="@(Model.ParamsName)" />
+            </div>
+        </div>
+        <div class="box-footer">
+            <input type="hidden" id="ID" name="ID" value="@(Model.ID)" />
+            <button type="button" class="btn btn-primary" id="EditBtn">保存</button>
+        </div>
+    </div>
+</div>

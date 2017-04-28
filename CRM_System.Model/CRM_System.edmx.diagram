@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6ce2ee4f52d34f60936d19dde6c29ed7" Name="Diagram1">
+        <EntityTypeShape EntityType="CRM_SystemModel.Mpr_Admin_ButtonRole" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CRM_SystemModel.Mpr_Admin_Menu" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CRM_SystemModel.Mpr_Admin_Role" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CRM_SystemModel.Mpr_Basic_Params" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="CRM_SystemModel.Mpr_Customer" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="CRM_SystemModel.Mpr_Customer_Log" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="CRM_SystemModel.Mpr_InterfaceCall_Log" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CRM_SystemModel.Mpr_Material_Type" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="CRM_SystemModel.Mpr_Organization" Width="1.5" PointX="4.75" PointY="7.75" />
+        <EntityTypeShape EntityType="CRM_SystemModel.Sys_Admin" Width="1.5" PointX="6.75" PointY="7.75" />
+        <EntityTypeShape EntityType="CRM_SystemModel.Sys_Error_log" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CRM_SystemModel.Sys_Role" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="CRM_SystemModel.Mpr_Material" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="CRM_SystemModel.View_Phone_WareHouse" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CRM_SystemModel.View_User_Phone" Width="1.5" PointX="10.75" PointY="6.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

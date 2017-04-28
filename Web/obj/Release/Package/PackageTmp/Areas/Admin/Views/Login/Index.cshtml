@@ -1,0 +1,78 @@
+﻿@using PagedList.Mvc;  
+@{  
+        Layout = null;
+        ViewBag.Title = "Login";  
+}  
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>云控后台</title>
+
+    <!-- Bootstrap -->
+    <link href="/Content/CRM_System/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Content/CRM_System/css/style.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+          <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->  
+    <script src="/Content/CRM_System/js/jquery.min.js"></script>
+    <script src="/Scripts/layer/layer.js"></script>
+    <script src="/Scripts/PublicJs.js"></script>
+    <script src="/Areas/Admin/Script/Login.js?@(new Random().Next(21212))"></script>
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+            margin: 0;
+            background: url(/Content/CRM_System/images/bg.jpg) center top no-repeat;
+            background-size: 100% 100%;
+            -ms-behavior: url(/Content/CRM_System/css/backgroundsize.min.htc);
+            behavior: url(/Content/CRM_System/css/backgroundsize.min.htc);
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="line"></div>
+    <div class="admin">
+        <div class="admin1">
+            <form>
+                <div class="admin2">
+                    <div class="pull-left admin2_1"><img src="/Content/CRM_System/images/admin.png"></div>
+                    <div class="pull-left admin2_2">
+                        <input type="text" class=""  name="uid" id="uid" placeholder="账号">
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="admin2"> 
+                    <div class="pull-left admin2_1"><img src="/Content/CRM_System/images/admin.jpg"></div>
+                    <div class="pull-left admin2_2">
+                        <input type="password" class="" name="password"  id="password"  placeholder="密码">
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="admin3"><a href="javascript:void(0);" id="LoginBtn">登录</a></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+     
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/Content/CRM_System/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+

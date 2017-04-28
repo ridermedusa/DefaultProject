@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{362B0D21-023F-4D6F-B4FB-556D17A123F3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CRM_System.BLL</RootNamespace>
+    <AssemblyName>CRM_System.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\packages\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="cn.jpush.api, Version=3.2.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\cn.jpush.api.3.2.7.0\lib\net40\cn.jpush.api.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JiebaNet.Analyser, Version=0.37.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LoTLib.Word.Split.Jieba.1.0.0.1\lib\JiebaNet.Analyser.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JiebaNet.Segmenter, Version=0.38.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LoTLib.Word.Split.Jieba.1.0.0.1\lib\JiebaNet.Segmenter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LitJson">
+      <HintPath>..\packages\LitJson.dll</HintPath>
+    </Reference>
+    <Reference Include="LoTLib.Word.Split, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LoTLib.Word.Split.Jieba.1.0.0.1\lib\LoTLib.Word.Split.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\LoTLib.Word.Split.Jieba.1.0.0.1\lib\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NSTool.UMengPush, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UMengPush.1.0.3\lib\NSTool.UMengPush.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="PlainElastic.Net, Version=1.1.55.0, Culture=neutral, PublicKeyToken=0930e76dfc03b7ac, processorArchitecture=MSIL">
+      <HintPath>..\packages\PlainElastic.Net.1.1.55\lib\Net40\PlainElastic.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ThoughtWorks.QRCode">
+      <HintPath>..\packages\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
+    <Reference Include="TopSdk">
+      <HintPath>..\packages\sdk-net-2016-06-07\TopSdk.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ComSQLService.cs" />
+    <Compile Include="Cookie.cs" />
+    <Compile Include="CRM_System.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRM_System.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumCollection.cs" />
+    <Compile Include="Jpush.cs" />
+    <Compile Include="KeySpirt.cs" />
+    <Compile Include="MailSenderBll.cs" />
+    <Compile Include="PlainElastic.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SysBllBase.cs" />
+    <Compile Include="Tools.cs" />
+    <Compile Include="Words.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CRM_System.DAL\CRM_System.DAL.csproj">
+      <Project>{b9069da2-7237-442e-b907-63fa3b4d0a75}</Project>
+      <Name>CRM_System.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRM_System.Model\CRM_System.Model.csproj">
+      <Project>{39e39828-2008-4897-946c-6990cc96e57f}</Project>
+      <Name>CRM_System.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Dict\Dict.dct" />
+    <None Include="LoTLib.Word.Split.dll.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CRM_System.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CRM_System.cs</LastGenOutput>
+    </Content>
+    <Content Include="Dict\ChsDoubleName1.txt" />
+    <Content Include="Dict\ChsDoubleName2.txt" />
+    <Content Include="Dict\ChsSingleName.txt" />
+    <Content Include="Dict\Stopword.txt" />
+    <Content Include="Dict\Synonym.txt" />
+    <Content Include="Dict\Wildcard.txt" />
+    <Content Include="Newtonsoft.Json.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

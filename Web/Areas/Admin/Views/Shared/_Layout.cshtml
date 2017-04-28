@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>CRM System</title> 
+    <!-- Bootstrap -->
+    <link href="/Content/CRM_System/css/bootstrap.min.css?v1" rel="stylesheet">
+    <link href="/Content/CRM_System/css/style.css?v1" rel="stylesheet">
+    <link href="/Content/CRM_System/css/Icheck.css" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+          <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    <script src="/Content/CRM_System/js/jquery.min.js"></script>
+    <script src="/Content/CRM_System/js/bootstrap.min.js"></script>
+    <!-- iCheck --> 
+    <script src="/Content/CRM_System/js/iCheck/icheck.min.js"></script>
+    <script type="text/javascript" src="/Content/CRM_System/js/layer/layer.js"></script>
+    <script src="/Content/CRM_System/js/Icheck.js"></script>
+    <script src="/Scripts/PublicJs.js?@(new Random().Next(100000))"></script>
+    <script type="text/javascript">
+        $(function () { 
+                /*
+                * We are gonna initialize all checkbox and radio inputs to 
+                * iCheck plugin in.
+                * You can find the documentation at http://fronteed.com/iCheck/
+                */
+                $("input[type='checkbox']:not(.simple), input[type='radio']:not(.simple)").iCheck({
+                    checkboxClass: 'icheckbox_minimal',
+                    radioClass: 'iradio_minimal'
+                });
+                   $('#main').height($(window).height() - 53);
+                   $.get("/Admin/Ajax/GetLeftMenu", function (data) {
+                       $('#Leftinfo').html(data);
+                       $("[name='clickitem']").each(function () {
+                           var clickitem = $(this).attr("href"); 
+                           var Parent = $(this).parent(); 
+                           if (typeof (Parent) != "undefined")
+                           {
+                               Parent.click(function () { 
+                                   $('#main').attr("src", clickitem);
+                               });
+                           }
+                       });
+                       //<!--左侧下拉导航-- >
+                       $(".leftsidebar_box dt").css({ "background-color": "#fff" });
+                       $(".leftsidebar_box dt img").attr("src", "/Content/CRM_System/images/-.png"); 
+                       $(".leftsidebar_box dd").hide();
+                       $(".leftsidebar_box dt").click(function () {
+                           $(".leftsidebar_box dt").css({ "background-color": "#fff" })
+                           $(this).css({ "background-color": "#eee" });
+                           $(this).parent().find('dd').removeClass("menu_chioce");
+                           $(".leftsidebar_box dt img").attr("src", "/Content/CRM_System/images/-.png");
+                           $(this).parent().find('img').attr("src", "/Content/CRM_System/images/-.jpg");
+                           /*$(".menu_chioce").slideUp(); */
+                           $(this).parent().find('dd').slideToggle();
+                           $(this).parent().find('dd').addClass("menu_chioce");
+                       });
+                   });
+                   var onOff = true;
+                   $('#left-panel-link').click(function () {
+
+                       if (onOff) {
+                           $('#left-panel').animate({ left: "-220px" });
+                           $('body').animate({ marginLeft: "0" });
+                       } else {
+                           $('#left-panel').animate({ left: "0" });
+                           $('body').animate({ marginLeft: "220px" });
+                       };
+
+                       onOff = !onOff;
+
+                   })
+               });
+    </script>
+</head>
+<body style="@(ViewBag.Title == "IframeIndex"?" margin-left:220px;overflow: hidden;":"")">
+    @RenderBody()
+</body>
+</html>

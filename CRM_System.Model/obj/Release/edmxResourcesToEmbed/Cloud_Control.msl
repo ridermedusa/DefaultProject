@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CRM_SystemModelStoreContainer" CdmEntityContainer="CRM_SystemEntities">
+    <EntitySetMapping Name="Mpr_Admin_ButtonRole">
+      <EntityTypeMapping TypeName="CRM_SystemModel.Mpr_Admin_ButtonRole">
+        <MappingFragment StoreEntitySet="Mpr_Admin_ButtonRole">
+          <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+          <ScalarProperty Name="OnlyStr" ColumnName="OnlyStr" />
+          <ScalarProperty Name="Roletype" ColumnName="Roletype" />
+          <ScalarProperty Name="ButtonName" ColumnName="ButtonName" />
+          <ScalarProperty Name="Operation" ColumnName="Operation" />
+          <ScalarProperty Name="PageID" ColumnName="PageID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mpr_Admin_Menu">
+      <EntityTypeMapping TypeName="CRM_SystemModel.Mpr_Admin_Menu">
+        <MappingFragment StoreEntitySet="Mpr_Admin_Menu">
+          <ScalarProperty Name="IsButton" ColumnName="IsButton" />
+          <ScalarProperty Name="action" ColumnName="action" />
+          <ScalarProperty Name="controller" ColumnName="controller" />
+          <ScalarProperty Name="RightParent" ColumnName="RightParent" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Ename" ColumnName="Ename" />
+          <ScalarProperty Name="RightName" ColumnName="RightName" />
+          <ScalarProperty Name="RightUrl" ColumnName="RightUrl" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mpr_Admin_Role">
+      <EntityTypeMapping TypeName="CRM_SystemModel.Mpr_Admin_Role">
+        <MappingFragment StoreEntitySet="Mpr_Admin_Role">
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="ButtonIDCollection" ColumnName="ButtonIDCollection" />
+          <ScalarProperty Name="PageID" ColumnName="PageID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mpr_APP_Config">
+      <EntityTypeMapping TypeName="CRM_SystemModel.Mpr_APP_Config">
+        <MappingFragment StoreEntitySet="Mpr_APP_Config">
+          <ScalarProperty Name="LastEditer" ColumnName="LastEditer" />
+          <ScalarProperty Name="LastEditTime" ColumnName="LastEditTime" />
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="MaxController" ColumnName="MaxController" />
+          <ScalarProperty Name="Feedback" ColumnName="Feedback" />
+          <ScalarProperty Name="ServerIP" ColumnName="ServerIP" />
+          <ScalarProperty Name="MaxUser" ColumnName="MaxUser" />
+          <ScalarProperty Name="MaxPhone" ColumnName="MaxPhone" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mpr_InterfaceCall_Log">
+      <EntityTypeMapping TypeName="CRM_SystemModel.Mpr_InterfaceCall_Log">
+        <MappingFragment StoreEntitySet="Mpr_InterfaceCall_Log">
+          <ScalarProperty Name="Params" ColumnName="Params" />
+          <ScalarProperty Name="InterfaceName" ColumnName="InterfaceName" />
+          <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+          <ScalarProperty Name="Ip" ColumnName="Ip" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mpr_Phone_WareHouse">
+      <EntityTypeMapping TypeName="CRM_SystemModel.Mpr_Phone_WareHouse">
+        <MappingFragment StoreEntitySet="Mpr_Phone_WareHouse">
+          <ScalarProperty Name="Adduser" ColumnName="Adduser" />
+          <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+          <ScalarProperty Name="FirstTasktime" ColumnName="FirstTasktime" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="PhoneID" ColumnName="PhoneID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mpr_Plan">
+      <EntityTypeMapping TypeName="CRM_SystemModel.Mpr_Plan">
+        <MappingFragment StoreEntitySet="Mpr_Plan">
+          <ScalarProperty Name="ChangeUser" ColumnName="ChangeUser" />
+          <ScalarProperty Name="ChangeTime" ColumnName="ChangeTime" />
+          <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+          <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PlanOverdue" ColumnName="PlanOverdue" />
+          <ScalarProperty Name="PlanData" ColumnName="PlanData" />
+          <ScalarProperty Name="PlanStartTime" ColumnName="PlanStartTime" />
+          <ScalarProperty Name="PlanDes" ColumnName="PlanDes" />
+          <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mpr_Plan_Log">
+      <EntityTypeMapping TypeName="CRM_SystemModel.Mpr_Plan_Log">
+        <MappingFragment StoreEntitySet="Mpr_Plan_Log">
+          <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+          <ScalarProperty Name="LogContent" ColumnName="LogContent" />
+          <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mpr_Push_Log">
+      <EntityTypeMapping TypeName="CRM_SystemModel.Mpr_Push_Log">
+        <MappingFragment StoreEntitySet="Mpr_Push_Log">
+          <ScalarProperty Name="Adduser" ColumnName="Adduser" />
+          <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+          <ScalarProperty Name="Apns_production" ColumnName="Apns_production" />
+          <ScalarProperty Name="Msg_id" ColumnName="Msg_id" />
+          <ScalarProperty Name="TaskParams" ColumnName="TaskParams" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+          <ScalarProperty Name="Message_content" ColumnName="Message_content" />
+          <ScalarProperty Name="RegistrationID" ColumnName="RegistrationID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mpr_Task">
+      <EntityTypeMapping TypeName="CRM_SystemModel.Mpr_Task">
+        <MappingFragment StoreEntitySet="Mpr_Task">
+          <ScalarProperty Name="LastResponse" ColumnName="LastResponse" />
+          <ScalarProperty Name="ReturnData" ColumnName="ReturnData" />
+          <ScalarProperty Name="Err_msg" ColumnName="Err_msg" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="Adduser" ColumnName="Adduser" />
+          <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+          <ScalarProperty Name="TaskData" ColumnName="TaskData" />
+          <ScalarProperty Name="TaskDes" ColumnName="TaskDes" />
+          <ScalarProperty Name="TaskStatus" ColumnName="TaskStatus" />
+          <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+          <ScalarProperty Name="UserPhoneID" ColumnName="UserPhoneID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mpr_Task_Log">
+      <EntityTypeMapping TypeName="CRM_SystemModel.Mpr_Task_Log">
+        <MappingFragment StoreEntitySet="Mpr_Task_Log">
+          <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+          <ScalarProperty Name="Is_End" ColumnName="Is_End" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="TaskLogDes" ColumnName="TaskLogDes" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="UserPhoneID" ColumnName="UserPhoneID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mpr_User_Phone">
+      <EntityTypeMapping TypeName="CRM_SystemModel.Mpr_User_Phone">
+        <MappingFragment StoreEntitySet="Mpr_User_Phone">
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+          <ScalarProperty Name="AddUserIP" ColumnName="AddUserIP" />
+          <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+          <ScalarProperty Name="LinkCount" ColumnName="LinkCount" />
+          <ScalarProperty Name="AbnormalAlert" ColumnName="AbnormalAlert" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="RegistrationID" ColumnName="RegistrationID" />
+          <ScalarProperty Name="Mac" ColumnName="Mac" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Admin">
+      <EntityTypeMapping TypeName="CRM_SystemModel.Sys_Admin">
+        <MappingFragment StoreEntitySet="Sys_Admin">
+          <ScalarProperty Name="AdminType" ColumnName="AdminType" />
+          <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+          <ScalarProperty Name="IsLock" ColumnName="IsLock" />
+          <ScalarProperty Name="LastLoginIP" ColumnName="LastLoginIP" />
+          <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="LoginPwd" ColumnName="LoginPwd" />
+          <ScalarProperty Name="TrueName" ColumnName="TrueName" />
+          <ScalarProperty Name="UName" ColumnName="UName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Error_log">
+      <EntityTypeMapping TypeName="CRM_SystemModel.Sys_Error_log">
+        <MappingFragment StoreEntitySet="Sys_Error_log">
+          <ScalarProperty Name="Ip" ColumnName="Ip" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ErrMsg" ColumnName="ErrMsg" />
+          <ScalarProperty Name="ErrType" ColumnName="ErrType" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Role">
+      <EntityTypeMapping TypeName="CRM_SystemModel.Sys_Role">
+        <MappingFragment StoreEntitySet="Sys_Role">
+          <ScalarProperty Name="ShowLv" ColumnName="ShowLv" />
+          <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+          <ScalarProperty Name="ButtonRole" ColumnName="ButtonRole" />
+          <ScalarProperty Name="ROLEVALUE" ColumnName="ROLEVALUE" />
+          <ScalarProperty Name="Ename" ColumnName="Ename" />
+          <ScalarProperty Name="ROLENAME" ColumnName="ROLENAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Phone_WareHouse">
+      <EntityTypeMapping TypeName="CRM_SystemModel.View_Phone_WareHouse">
+        <MappingFragment StoreEntitySet="View_Phone_WareHouse">
+          <ScalarProperty Name="TaskData" ColumnName="TaskData" />
+          <ScalarProperty Name="TaskStatus" ColumnName="TaskStatus" />
+          <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+          <ScalarProperty Name="TaskDes" ColumnName="TaskDes" />
+          <ScalarProperty Name="LinkCount" ColumnName="LinkCount" />
+          <ScalarProperty Name="User_Phone_Status" ColumnName="User_Phone_Status" />
+          <ScalarProperty Name="AbnormalAlert" ColumnName="AbnormalAlert" />
+          <ScalarProperty Name="RegistrationID" ColumnName="RegistrationID" />
+          <ScalarProperty Name="Mac" ColumnName="Mac" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="Adduser" ColumnName="Adduser" />
+          <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+          <ScalarProperty Name="FirstTasktime" ColumnName="FirstTasktime" />
+          <ScalarProperty Name="PhoneID" ColumnName="PhoneID" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_User_Phone">
+      <EntityTypeMapping TypeName="CRM_SystemModel.View_User_Phone">
+        <MappingFragment StoreEntitySet="View_User_Phone">
+          <ScalarProperty Name="AddUserIP" ColumnName="AddUserIP" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="TrueName" ColumnName="TrueName" />
+          <ScalarProperty Name="UName" ColumnName="UName" />
+          <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+          <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+          <ScalarProperty Name="LinkCount" ColumnName="LinkCount" />
+          <ScalarProperty Name="AbnormalAlert" ColumnName="AbnormalAlert" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="RegistrationID" ColumnName="RegistrationID" />
+          <ScalarProperty Name="Mac" ColumnName="Mac" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CRM_SystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CRM_SystemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Mpr_Admin_ButtonRole" EntityType="CRM_SystemModel.Mpr_Admin_ButtonRole" />
+    <EntitySet Name="Mpr_Admin_Menu" EntityType="CRM_SystemModel.Mpr_Admin_Menu" />
+    <EntitySet Name="Mpr_Admin_Role" EntityType="CRM_SystemModel.Mpr_Admin_Role" />
+    <EntitySet Name="Mpr_APP_Config" EntityType="CRM_SystemModel.Mpr_APP_Config" />
+    <EntitySet Name="Mpr_InterfaceCall_Log" EntityType="CRM_SystemModel.Mpr_InterfaceCall_Log" />
+    <EntitySet Name="Mpr_Phone_WareHouse" EntityType="CRM_SystemModel.Mpr_Phone_WareHouse" />
+    <EntitySet Name="Mpr_Plan" EntityType="CRM_SystemModel.Mpr_Plan" />
+    <EntitySet Name="Mpr_Plan_Log" EntityType="CRM_SystemModel.Mpr_Plan_Log" />
+    <EntitySet Name="Mpr_Push_Log" EntityType="CRM_SystemModel.Mpr_Push_Log" />
+    <EntitySet Name="Mpr_Task" EntityType="CRM_SystemModel.Mpr_Task" />
+    <EntitySet Name="Mpr_Task_Log" EntityType="CRM_SystemModel.Mpr_Task_Log" />
+    <EntitySet Name="Mpr_User_Phone" EntityType="CRM_SystemModel.Mpr_User_Phone" />
+    <EntitySet Name="Sys_Admin" EntityType="CRM_SystemModel.Sys_Admin" />
+    <EntitySet Name="Sys_Error_log" EntityType="CRM_SystemModel.Sys_Error_log" />
+    <EntitySet Name="Sys_Role" EntityType="CRM_SystemModel.Sys_Role" />
+    <EntitySet Name="View_Phone_WareHouse" EntityType="CRM_SystemModel.View_Phone_WareHouse" />
+    <EntitySet Name="View_User_Phone" EntityType="CRM_SystemModel.View_User_Phone" />
+  </EntityContainer>
+  <EntityType Name="Mpr_Admin_ButtonRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PageID" Type="Int32" />
+    <Property Name="Operation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ButtonName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Roletype" Type="Int32" />
+    <Property Name="OnlyStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Mpr_Admin_Menu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RightUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RightName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Ename" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="AddTime" Type="DateTime" Precision="3" />
+    <Property Name="RightParent" Type="Int32" />
+    <Property Name="controller" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="action" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsButton" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Mpr_Admin_Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="PageID" Type="Int32" />
+    <Property Name="ButtonIDCollection" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="AddTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Mpr_APP_Config">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaxPhone" Type="Int32" />
+    <Property Name="MaxUser" Type="Int32" />
+    <Property Name="ServerIP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Feedback" Type="Int32" />
+    <Property Name="MaxController" Type="Int32" />
+    <Property Name="Interval" Type="Int32" />
+    <Property Name="LastEditTime" Type="DateTime" Precision="3" />
+    <Property Name="LastEditer" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Mpr_InterfaceCall_Log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="InterfaceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Params" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Mpr_Phone_WareHouse">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="PhoneNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="PhoneID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="TaskID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="FirstTasktime" Type="DateTime" Precision="3" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="Adduser" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Mpr_Plan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="PlanName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PlanDes" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="PlanStartTime" Type="DateTime" Precision="3" />
+    <Property Name="PlanData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PlanOverdue" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="AddTime" Type="DateTime" Precision="3" />
+    <Property Name="AddUser" Type="Int32" />
+    <Property Name="ChangeTime" Type="DateTime" Precision="3" />
+    <Property Name="ChangeUser" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Mpr_Plan_Log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="PlanID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="LogContent" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Mpr_Push_Log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="RegistrationID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Message_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TaskType" Type="Int32" Nullable="false" />
+    <Property Name="TaskID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="TaskParams" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Msg_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Apns_production" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Adduser" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mpr_Task">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="UserPhoneID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="TaskType" Type="Int32" Nullable="false" />
+    <Property Name="TaskStatus" Type="Int32" Nullable="false" />
+    <Property Name="TaskDes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TaskData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="Adduser" Type="Int32" Nullable="false" />
+    <Property Name="Result" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Err_msg" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="ReturnData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastResponse" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Mpr_Task_Log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="UserPhoneID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="TaskID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="TaskLogDes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Is_End" Type="Int32" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Mpr_User_Phone">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Tag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RegistrationID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="AbnormalAlert" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="LinkCount" Type="Int32" Nullable="false" />
+    <Property Name="Addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AddUserIP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AdminID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Sys_Admin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TrueName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LoginPwd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastLogin" Type="DateTime" Precision="3" />
+    <Property Name="LastLoginIP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IsLock" Type="Int32" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="AdminType" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Sys_Error_log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ErrType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ErrMsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Sys_Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ROLENAME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Ename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ROLEVALUE" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ButtonRole" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NOTE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ShowLv" Type="Int32" />
+  </EntityType>
+  <EntityType Name="View_Phone_WareHouse">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="PhoneNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="TaskID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="PhoneID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="FirstTasktime" Type="DateTime" Precision="3" />
+    <Property Name="Addtime" Type="DateTime" Precision="3" />
+    <Property Name="Adduser" Type="Int32" />
+    <Property Name="Tag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RegistrationID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AbnormalAlert" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="User_Phone_Status" Type="Int32" />
+    <Property Name="LinkCount" Type="Int32" />
+    <Property Name="TaskDes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TaskType" Type="Int32" />
+    <Property Name="TaskStatus" Type="Int32" />
+    <Property Name="TaskData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_User_Phone">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="LinkCount" />
+      <PropertyRef Name="Addtime" />
+      <PropertyRef Name="AddUserIP" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="Tag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RegistrationID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="AbnormalAlert" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="LinkCount" Type="Int32" Nullable="false" />
+    <Property Name="Addtime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="AdminID" Type="Int32" />
+    <Property Name="UName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TrueName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddUserIP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

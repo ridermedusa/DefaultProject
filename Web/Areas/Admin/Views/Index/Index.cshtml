@@ -1,0 +1,38 @@
+﻿@model CRM_System.Model.Sys_Admin
+@{
+    ViewBag.Title = "IframeIndex";
+}
+  
+<div class="header">
+    <div class="header_left pull-left"> <a href="/" class="logo"><img src="/Content/CRM_System/images/logo.jpg"></a> <a id="left-panel-link" href="javascript:;"><span></span><span></span><span></span></a> </div>
+    <div class="header_right pull-right">
+        <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Admin <span class="caret"></span> </button>
+            <ul class="dropdown-menu" >
+                <li style="width:auto;"><a href="/admin/Login/Exit">退出</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div style="height:60px"></div>
+<div class="con">
+    <div id="left-panel" class="con_left">
+        <div class="leftsidebar_box" id="Leftinfo"> 
+            <img src="/Content/Admin/images/gif/loading.gif" />
+        </div>
+        <div style="height:80px"></div>
+    </div>  
+    <!-- Main content -->
+    <iframe id="main" name="main" scrolling="auto" marginheight="0" marginwidth="0" frameborder="0" style="width:100%; " class="conts"></iframe>
+</div>
+
+
+
+
+
+
+
+
+
+

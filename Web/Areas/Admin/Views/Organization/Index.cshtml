@@ -1,0 +1,56 @@
+﻿ @{
+     Layout = "~/Areas/Admin/Views/Shared/_LayoutOrg.cshtml";
+     ViewBag.Title = "组织结构";
+}  
+<!-- Content Header (Page header) --> 
+<!--<link href="/Scripts/OrgChart-master/dist/css/MyUse.css" rel="stylesheet" />
+<link href="/Scripts/OrgChart-master/dist/css/jquery.orgchart.css?15" rel="stylesheet" />  
+<script src="/Scripts/OrgChart-master/dist/js/jquery-3.1.0.min.js"></script>
+<script src="/Scripts/OrgChart-master/dist/js/html2canvas.min.js"></script> 
+<script src="/Scripts/OrgChart-master/dist/js/jquery.orgchart.js"></script>--> 
+<link href="~/Scripts/TreeChart/TreeStyle.css?2" rel="stylesheet" />
+<script src="~/Scripts/TreeChart/TreeJs.js?@(new Random().Next(1011))"></script>
+
+<script src="/Scripts/PublicJs.js"></script>
+<script src="~/Areas/Admin/Script/Organization/Index.js?@(new Random().Next(1011))"></script>
+<div id="page" class="con_right">
+    <div class="con_right0">
+        <div class="con_right1 pull-left">
+            <span class="pull-left"><img src="/Content/CRM_System/images/ico1.jpg"></span>
+            <h3 class="pull-left">组织结构维护</h3>
+        </div>
+        <div class="con_right2 pull-right">
+            <ol class="breadcrumb">
+                <li><a href="javascript:parent.location.href='/'">Home</a></li>
+                <li><a href="javascript:void(0);">组织结构</a></li>
+                <li class="active"><a href="/admin/Organization">组织结构图</a></li>
+            </ol>
+        </div>
+        <div class="clearfix"></div>
+    </div> 
+    <div class="ser">
+        <div class="form-inline"> 
+            @using (Html.BeginForm("Index", "Organization", FormMethod.Get))
+            {
+                <div class="input-group" >
+                    <button type="button" class="btn btn-default" id="roleadd" name="roleadd" style="margin-left:15px;" value="添加">添加</button>
+                    <button type="button" class="btn btn-default" id="reload" name="reload" style="margin-left:15px;" value="复位">复位</button>
+                </div>
+            } 
+        </div>
+    </div>
+
+
+    <div class="con_right3">
+        <div id="Treeinfo" class="tree well">
+          
+        </div>
+    </div>
+
+
+
+    <div class="con_right3"> 
+        <div id="chart-container"></div>
+       </div>
+
+</div>

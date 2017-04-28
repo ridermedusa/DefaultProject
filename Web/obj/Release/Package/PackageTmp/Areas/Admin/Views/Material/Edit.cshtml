@@ -1,0 +1,66 @@
+﻿@model CRM_System.Model.Mpr_Material
+@{
+    ViewBag.Title = "素材";
+}
+@using (Html.BeginForm("Edit", "Material", new { type = "save" }, FormMethod.Post, new { id = "Controller" }))
+{
+    <script src="/Areas/Admin/Script/Material/Edit.js?@(new Random().Next(10000))"></script>
+        <link rel="stylesheet" href="/Scripts/kindeditor/themes/default/default.css" />
+        <link rel="stylesheet" href="/Scripts/kindeditor/plugins/code/prettify.css" />
+        <script src="/Scripts/kindeditor/kindeditor.js?123"></script>
+        <script src="/Scripts/kindeditor/lang/zh_CN.js"></script>
+        <script charset="utf-8" src="/Scripts/kindeditor/plugins/code/prettify.js"></script>
+        <link rel="stylesheet" type="text/css" href="/Scripts/jsUpload/uploadify.css" />
+        <script type="text/javascript" src="/Scripts/jsUpload/jquery.uploadify.js"></script>
+        <script type="text/javascript" src="/Scripts/jsUpload/jquery.uploadify.min.js"></script>
+        <div class="col-md-6" style="margin-top:15px;">
+            <!-- general form elements -->
+            <div class="box box-primary">
+                <div class="box-header">
+                        <h3 class="box-title" title="素材管理"><span id="tile"></span>管理</h3>
+                    </div> 
+                <!-- /.box-header -->
+                <!-- form start -->
+                @*<form role="form" id="Subinfo">*@
+                <input type="hidden" id="ID" name="ID" value="@(Model.ID)" /> 
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" title="文章类型">类型<span style="color:red">*</span></label>
+                      <select class="form-control" style="width:30%;" id="TypeID" name="TypeID">
+                          @foreach (var item in new CRM_System.BLL.Mpr_Material_TypeService().FindAll())
+                          {
+                              if (Model.TypeID == item.ID)
+                              {
+                        <option value="@(item.ID)" selected="selected">@(item.TypeName)</option> }
+                              else
+                              {
+                               <option value="@(item.ID)">@(item.TypeName)</option>
+                              }
+                          }
+                      </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" title="文章标题">标题<span style="color:red">*</span></label>
+                        <input type="text" class="form-control" maxlength="1000" style="width:90%;" id="Title" name="Title" placeholder="Enter..." value="@(Model.Title)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" title="文章描述">文章描述<span style="color:red">*</span></label>
+                        <input type="text" class="form-control" style="width:90%;" id="Des" name="Des" placeholder="Enter..." value="@(Model.Des)" />
+                    </div>
+                     
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" title="内容">内容<span style="color:red">*</span></label>
+                        @* <input type="text" class="form-control" id="ArtContent" name="ArtContent"  placeholder="Enter..." value="@(Server.UrlDecode(Model.ArtContent))" />*@
+                        <textarea id="Context" name="Context"> @(Server.UrlDecode(Model.Context)) </textarea>
+                    </div> 
+                </div>
+                <!-- /.box-body --> 
+                <div class="box-footer">
+                    <button type="button" class="btn btn-primary" id="EditBtn">保存</button>
+                </div>
+
+                @*</form>*@
+            </div><!-- /.box -->
+        </div><!--/.col (left) -->
+
+}

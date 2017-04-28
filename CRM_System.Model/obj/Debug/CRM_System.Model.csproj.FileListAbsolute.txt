@@ -1,0 +1,9 @@
+E:\Work\CRMSystem\CRM_System.Model\bin\Debug\CRM_System.Model.dll.config
+E:\Work\CRMSystem\CRM_System.Model\bin\Debug\CRM_System.Model.dll
+E:\Work\CRMSystem\CRM_System.Model\bin\Debug\CRM_System.Model.pdb
+E:\Work\CRMSystem\CRM_System.Model\bin\Debug\EntityFramework.dll
+E:\Work\CRMSystem\CRM_System.Model\bin\Debug\EntityFramework.xml
+E:\Work\CRMSystem\CRM_System.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\Work\CRMSystem\CRM_System.Model\obj\Debug\CRM_System.Model.dll
+E:\Work\CRMSystem\CRM_System.Model\obj\Debug\CRM_System.Model.pdb
+E:\Work\CRMSystem\CRM_System.Model\obj\Debug\CRM_System.Model.csprojResolveAssemblyReference.cache

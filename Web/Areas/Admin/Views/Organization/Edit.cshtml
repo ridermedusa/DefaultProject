@@ -1,0 +1,141 @@
+﻿@model CRM_System.Model.Mpr_Organization
+@{
+    ViewBag.Title = "添加结构";
+}
+
+<link href="/Scripts/jQuery-File-Upload-master/css/jquery.fileupload.css" rel="stylesheet" />
+<link href="/Scripts/Jcrop/css/jquery.Jcrop.min.css" rel="stylesheet" />
+<script src="/Scripts/jQuery-File-Upload-master/vendor/jquery.ui.widget.js"></script>
+<script src="/Scripts/jQuery-File-Upload-master/jquery.iframe-transport.js"></script>
+<script src="/Scripts/jQuery-File-Upload-master/jquery.fileupload.js"></script>
+<script src="/Scripts/Jcrop/js/jquery.Jcrop.min.js"></script>
+<script src="/Scripts/Jcrop/js/Temp.js"></script> 
+
+<script src="/Areas/Admin/Script/Organization/Edit.js?@(new Random().Next(10000))"></script>
+<div class="col-md-6" style="margin-top:15px;">
+    <!-- general form elements -->
+    <div class="box box-primary">
+        <div class="box-header">
+            <h3 class="box-title" title="添加结构">添加结构</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form role="form" id="Subinfo">
+            <input type="hidden" id="ID" name="ID" value="@(ViewBag.ID)" />
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1" title="姓名">姓名</label>
+
+                    <input type="text" class="form-control" id="Name" name="Name" placeholder="Enter..." value="@(Model.Name)"/>
+                </div>
+                <div class="form-group">
+                 <label for="exampleInputEmail1" title="工号">工号</label>
+
+                    <input type="text" class="form-control" id="WorkNo" name="WorkNo" placeholder="Enter..." value="@(Model.WorkNo)" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" title="部门">部门</label> 
+
+                    <select id="Dep" name="Dep" class="form-control" style="width:30%;">
+                        <option value="">请选择</option>
+                        @foreach (var item in new CRM_System.BLL.Mpr_Basic_ParamsService().FindByParam(s => s.BasicType == (int)CRM_System.BLL.BasicType.部门))
+                        {
+                            if (Model.Dep == item.ParamsName)
+                            {
+                                <option value="@(item.ParamsName)" selected="selected">@(item.ParamsName)</option>
+                            }
+                            else
+                            {
+                                <option value="@(item.ParamsName)">@(item.ParamsName)</option>
+                            }
+                        }
+                    </select>
+                       
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" title="职位">职位</label> 
+                    <select id="Position" name="Position" class="form-control" style="width:30%;">
+                        <option value="">请选择</option>
+                        @foreach (var item in new CRM_System.BLL.Mpr_Basic_ParamsService().FindByParam(s => s.BasicType == (int)CRM_System.BLL.BasicType.职位))
+                        {
+                            if (Model.Position == item.ParamsName)
+                            {
+                                <option value="@(item.ParamsName)" selected="selected">@(item.ParamsName)</option>
+                            }
+                            else
+                            {
+                                <option value="@(item.ParamsName)">@(item.ParamsName)</option>
+                            }
+                        }
+                    </select>
+
+
+                </div> 
+                 
+                <div class="form-group">
+                    <label for="exampleInputEmail1" title="上级">上级</label>
+                  @if (Model.ID == 1)
+                  {
+                    <select id="ParentID" name="ParentID" class="form-control" style="width:30%;">
+                        <option value="0">最上级</option>
+                    </select>
+                  }
+                  else
+                  {  <select id="ParentID" name="ParentID" class="form-control" style="width:30%;">
+                        @foreach (var item in new CRM_System.BLL.Mpr_OrganizationService().FindByParam(s => true))
+                        {
+                            if (Model.ParentID == item.ID)
+                            {
+                                <option value="@(item.ID)" selected="selected">@(item.Dep)@(item.Position)@(item.Name)</option>
+                            }
+                            else
+                            {
+                                <option value="@(item.ID)">@(item.Dep)@(item.Position)@(item.Name)</option>
+                            }
+                        }
+                    </select>
+                  }
+                   
+                </div>  
+                <div class="form-group">
+                    <label for="exampleInputEmail1" title="排序编号">排序编号</label>
+                    <input type="text" class="form-control" id="Sort" name="Sort" placeholder="Enter..." value="@(Model.Sort)" />
+                </div>
+
+                <div class="form-group" style="margin-top:10px;">
+                    <label for="exampleInputEmail1" title="头像">头像</label>
+                    <span class="btn btn-success fileinput-button">
+                        <i class="glyphicon glyphicon-plus"></i>
+                        <span>Add files...</span>
+                        <input id="fileuploadByIndex" type="file" name="files[]" data-url="/Scripts/jQuery-File-Upload-master/TempPic.ashx" multiple>
+                    </span>
+                    <div class="progress xs" style="width:50%; margin-top:10px;" id="progressByIndex">
+                        <div class="progress-bar progress-bar-aqua" style="width: 0%" id="progress_divByIndex" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+
+                        </div>
+                    </div>
+                    <span class="sr-only" id="progress_divcenterByIndex">0% Complete</span>
+                </div>
+                <div class="form-group" style="margin-top:30px;">
+                    <div id="CreateJPropByIndex">
+
+                    </div>
+                </div>
+                <div class="form-group" style="margin-top:30px;">
+                    <div style="text-align:center">
+                        <div id="AfterPicByIndex">
+                            <img src='@(Model.Photo)' />
+                        </div>
+                        <span style="color:#c3bcbc;font-size:12px">60 * 60 </span>
+
+                    </div>
+                </div>
+                <input type="hidden" name="Photo" id="Photo" value="@(Model.Photo)" />
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <button type="button" class="btn btn-primary" id="EditBtn">保存</button>
+            </div>
+        </form>
+    </div><!-- /.box -->
+</div><!--/.col (left) -->

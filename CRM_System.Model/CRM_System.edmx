@@ -1,0 +1,857 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CRM_SystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Mpr_Admin_ButtonRole">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PageID" Type="int" />
+          <Property Name="Operation" Type="nvarchar" MaxLength="50" />
+          <Property Name="ButtonName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Roletype" Type="int" />
+          <Property Name="OnlyStr" Type="nvarchar" MaxLength="50" />
+          <Property Name="Addtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Mpr_Admin_Menu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RightUrl" Type="nvarchar" MaxLength="100" />
+          <Property Name="RightName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Ename" Type="nvarchar" MaxLength="200" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="AddTime" Type="datetime" />
+          <Property Name="RightParent" Type="int" />
+          <Property Name="controller" Type="varchar" MaxLength="100" />
+          <Property Name="action" Type="varchar" MaxLength="100" />
+          <Property Name="IsButton" Type="int" />
+        </EntityType>
+        <EntityType Name="Mpr_Admin_Role">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleID" Type="int" />
+          <Property Name="PageID" Type="int" />
+          <Property Name="ButtonIDCollection" Type="nvarchar" MaxLength="500" />
+          <Property Name="AddTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Mpr_Basic_Params">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="BasicType" Type="int" />
+          <Property Name="ParamsName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Adduser" Type="int" />
+          <Property Name="Addtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Mpr_Customer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="ID_Card" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Sex" Type="int" Nullable="false" />
+          <Property Name="Birthday" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Province" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Area" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="600" />
+          <Property Name="QQ" Type="nvarchar" MaxLength="50" />
+          <Property Name="WeChat" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Position" Type="nvarchar" MaxLength="1000" />
+          <Property Name="SharesAge" Type="int" />
+          <Property Name="Company" Type="nvarchar" MaxLength="50" />
+          <Property Name="InvestmentVariety" Type="nvarchar" MaxLength="1000" />
+          <Property Name="AvailableMoney" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="InvestmentAdviser" Type="int" />
+          <Property Name="SaleID" Type="int" />
+          <Property Name="Sale" Type="nvarchar" MaxLength="50" />
+          <Property Name="SaleDep" Type="nvarchar" MaxLength="50" />
+          <Property Name="SaleDirectorID" Type="int" />
+          <Property Name="SaleDirector" Type="nvarchar" MaxLength="50" />
+          <Property Name="SaleManagerID" Type="int" />
+          <Property Name="SaleManager" Type="nvarchar" MaxLength="50" />
+          <Property Name="SaleChiefID" Type="int" />
+          <Property Name="SaleChief" Type="nvarchar" MaxLength="50" />
+          <Property Name="AddUser" Type="int" />
+          <Property Name="Addtime" Type="datetime" />
+          <Property Name="ChangeUser" Type="int" />
+          <Property Name="Changetime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Mpr_Customer_Log">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="CustomerID" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="Context" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Adduser" Type="int" />
+          <Property Name="Addtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Mpr_InterfaceCall_Log">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ip" Type="nvarchar" MaxLength="50" />
+          <Property Name="Addtime" Type="datetime" />
+          <Property Name="InterfaceName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Params" Type="nvarchar" MaxLength="2000" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“CRM_System.dbo.Mpr_Material”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="Mpr_Material">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="AddTime" />
+            <PropertyRef Name="AddUser" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="TypeID" Type="char" MaxLength="32" />
+          <Property Name="TypeName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="Des" Type="nvarchar" MaxLength="100" />
+          <Property Name="Context" Type="nvarchar(max)" />
+          <Property Name="AddTime" Type="datetime" Nullable="false" />
+          <Property Name="AddUser" Type="int" Nullable="false" />
+          <Property Name="UpdateTime" Type="datetime" />
+          <Property Name="UpdateUser" Type="int" />
+        </EntityType>
+        <EntityType Name="Mpr_Material_Type">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="TypeName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Sort" Type="int" Nullable="false" />
+          <Property Name="AddTime" Type="datetime" Nullable="false" />
+          <Property Name="AddUser" Type="int" Nullable="false" />
+          <Property Name="UpdateTime" Type="datetime" />
+          <Property Name="UpdateUser" Type="int" />
+        </EntityType>
+        <EntityType Name="Mpr_Organization">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dep" Type="nvarchar" MaxLength="50" />
+          <Property Name="Position" Type="nvarchar" MaxLength="50" />
+          <Property Name="WorkNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="500" />
+          <Property Name="Addtime" Type="datetime" />
+          <Property Name="Adduser" Type="int" />
+          <Property Name="Sort" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_Admin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UName" Type="nvarchar" MaxLength="100" />
+          <Property Name="TrueName" Type="nvarchar" MaxLength="100" />
+          <Property Name="LoginPwd" Type="nvarchar" MaxLength="100" />
+          <Property Name="RoleID" Type="nvarchar" MaxLength="500" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastLogin" Type="datetime" />
+          <Property Name="LastLoginIP" Type="nvarchar" MaxLength="20" />
+          <Property Name="IsLock" Type="int" />
+          <Property Name="Addtime" Type="datetime" />
+          <Property Name="AdminType" Type="int" />
+          <Property Name="FirstID" Type="int" />
+        </EntityType>
+        <EntityType Name="Sys_Error_log">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ErrType" Type="nvarchar" MaxLength="200" />
+          <Property Name="ErrMsg" Type="nvarchar(max)" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Ip" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Sys_Role">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="ROLENAME" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Ename" Type="nvarchar" MaxLength="50" />
+          <Property Name="ROLEVALUE" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ButtonRole" Type="nvarchar(max)" />
+          <Property Name="NOTE" Type="ntext" />
+          <Property Name="ShowLv" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“CRM_System.dbo.View_Phone_WareHouse”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="View_Phone_WareHouse">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="PhoneNum" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="int" />
+          <Property Name="TaskID" Type="char" MaxLength="32" />
+          <Property Name="PhoneID" Type="char" MaxLength="32" />
+          <Property Name="FirstTasktime" Type="datetime" />
+          <Property Name="Addtime" Type="datetime" />
+          <Property Name="Adduser" Type="int" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mac" Type="nvarchar" MaxLength="50" />
+          <Property Name="RegistrationID" Type="nvarchar" MaxLength="50" />
+          <Property Name="AbnormalAlert" Type="nvarchar" MaxLength="2000" />
+          <Property Name="User_Phone_Status" Type="int" />
+          <Property Name="LinkCount" Type="int" />
+          <Property Name="TaskDes" Type="nvarchar" MaxLength="200" />
+          <Property Name="TaskType" Type="int" />
+          <Property Name="TaskStatus" Type="int" />
+          <Property Name="TaskData" Type="nvarchar(max)" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“CRM_System.dbo.View_User_Phone”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="View_User_Phone">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="LinkCount" />
+            <PropertyRef Name="Addtime" />
+            <PropertyRef Name="AddUserIP" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mac" Type="nvarchar" MaxLength="50" />
+          <Property Name="RegistrationID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="int" />
+          <Property Name="AbnormalAlert" Type="nvarchar" MaxLength="2000" />
+          <Property Name="LinkCount" Type="int" Nullable="false" />
+          <Property Name="Addtime" Type="datetime" Nullable="false" />
+          <Property Name="AdminID" Type="int" />
+          <Property Name="UName" Type="nvarchar" MaxLength="100" />
+          <Property Name="TrueName" Type="nvarchar" MaxLength="100" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="AddUserIP" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CRM_SystemModelStoreContainer">
+          <EntitySet Name="Mpr_Admin_ButtonRole" EntityType="Self.Mpr_Admin_ButtonRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mpr_Admin_Menu" EntityType="Self.Mpr_Admin_Menu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mpr_Admin_Role" EntityType="Self.Mpr_Admin_Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mpr_Basic_Params" EntityType="Self.Mpr_Basic_Params" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mpr_Customer" EntityType="Self.Mpr_Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mpr_Customer_Log" EntityType="Self.Mpr_Customer_Log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mpr_InterfaceCall_Log" EntityType="Self.Mpr_InterfaceCall_Log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mpr_Material_Type" EntityType="Self.Mpr_Material_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mpr_Organization" EntityType="Self.Mpr_Organization" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_Admin" EntityType="Self.Sys_Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_Error_log" EntityType="Self.Sys_Error_log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_Role" EntityType="Self.Sys_Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mpr_Material" EntityType="Self.Mpr_Material" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[Mpr_Material].[ID] AS [ID], 
+[Mpr_Material].[TypeID] AS [TypeID], 
+[Mpr_Material].[TypeName] AS [TypeName], 
+[Mpr_Material].[Title] AS [Title], 
+[Mpr_Material].[Des] AS [Des], 
+[Mpr_Material].[Context] AS [Context], 
+[Mpr_Material].[AddTime] AS [AddTime], 
+[Mpr_Material].[AddUser] AS [AddUser], 
+[Mpr_Material].[UpdateTime] AS [UpdateTime], 
+[Mpr_Material].[UpdateUser] AS [UpdateUser]
+FROM [dbo].[Mpr_Material] AS [Mpr_Material]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Phone_WareHouse" EntityType="Self.View_Phone_WareHouse" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[View_Phone_WareHouse].[ID] AS [ID], 
+[View_Phone_WareHouse].[PhoneNum] AS [PhoneNum], 
+[View_Phone_WareHouse].[Status] AS [Status], 
+[View_Phone_WareHouse].[TaskID] AS [TaskID], 
+[View_Phone_WareHouse].[PhoneID] AS [PhoneID], 
+[View_Phone_WareHouse].[FirstTasktime] AS [FirstTasktime], 
+[View_Phone_WareHouse].[Addtime] AS [Addtime], 
+[View_Phone_WareHouse].[Adduser] AS [Adduser], 
+[View_Phone_WareHouse].[Tag] AS [Tag], 
+[View_Phone_WareHouse].[Mac] AS [Mac], 
+[View_Phone_WareHouse].[RegistrationID] AS [RegistrationID], 
+[View_Phone_WareHouse].[AbnormalAlert] AS [AbnormalAlert], 
+[View_Phone_WareHouse].[User_Phone_Status] AS [User_Phone_Status], 
+[View_Phone_WareHouse].[LinkCount] AS [LinkCount], 
+[View_Phone_WareHouse].[TaskDes] AS [TaskDes], 
+[View_Phone_WareHouse].[TaskType] AS [TaskType], 
+[View_Phone_WareHouse].[TaskStatus] AS [TaskStatus], 
+[View_Phone_WareHouse].[TaskData] AS [TaskData]
+FROM [dbo].[View_Phone_WareHouse] AS [View_Phone_WareHouse]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_User_Phone" EntityType="Self.View_User_Phone" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[View_User_Phone].[ID] AS [ID], 
+[View_User_Phone].[Tag] AS [Tag], 
+[View_User_Phone].[Mac] AS [Mac], 
+[View_User_Phone].[RegistrationID] AS [RegistrationID], 
+[View_User_Phone].[Status] AS [Status], 
+[View_User_Phone].[AbnormalAlert] AS [AbnormalAlert], 
+[View_User_Phone].[LinkCount] AS [LinkCount], 
+[View_User_Phone].[Addtime] AS [Addtime], 
+[View_User_Phone].[AdminID] AS [AdminID], 
+[View_User_Phone].[UName] AS [UName], 
+[View_User_Phone].[TrueName] AS [TrueName], 
+[View_User_Phone].[RoleName] AS [RoleName], 
+[View_User_Phone].[Phone] AS [Phone], 
+[View_User_Phone].[Email] AS [Email], 
+[View_User_Phone].[AddUserIP] AS [AddUserIP]
+FROM [dbo].[View_User_Phone] AS [View_User_Phone]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CRM_SystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CRM_SystemEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Mpr_Admin_ButtonRole" EntityType="CRM_SystemModel.Mpr_Admin_ButtonRole" />
+          <EntitySet Name="Mpr_Admin_Menu" EntityType="CRM_SystemModel.Mpr_Admin_Menu" />
+          <EntitySet Name="Mpr_Admin_Role" EntityType="CRM_SystemModel.Mpr_Admin_Role" />
+          <EntitySet Name="Mpr_Basic_Params" EntityType="CRM_SystemModel.Mpr_Basic_Params" />
+          <EntitySet Name="Mpr_Customer" EntityType="CRM_SystemModel.Mpr_Customer" />
+          <EntitySet Name="Mpr_Customer_Log" EntityType="CRM_SystemModel.Mpr_Customer_Log" />
+          <EntitySet Name="Mpr_InterfaceCall_Log" EntityType="CRM_SystemModel.Mpr_InterfaceCall_Log" />
+          <EntitySet Name="Mpr_Material_Type" EntityType="CRM_SystemModel.Mpr_Material_Type" />
+          <EntitySet Name="Mpr_Organization" EntityType="CRM_SystemModel.Mpr_Organization" />
+          <EntitySet Name="Sys_Admin" EntityType="CRM_SystemModel.Sys_Admin" />
+          <EntitySet Name="Sys_Error_log" EntityType="CRM_SystemModel.Sys_Error_log" />
+          <EntitySet Name="Sys_Role" EntityType="CRM_SystemModel.Sys_Role" />
+          <EntitySet Name="Mpr_Material" EntityType="CRM_SystemModel.Mpr_Material" />
+          <EntitySet Name="View_Phone_WareHouse" EntityType="CRM_SystemModel.View_Phone_WareHouse" />
+          <EntitySet Name="View_User_Phone" EntityType="CRM_SystemModel.View_User_Phone" />
+        </EntityContainer>
+        <EntityType Name="Mpr_Admin_ButtonRole">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PageID" Type="Int32" />
+          <Property Name="Operation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ButtonName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Roletype" Type="Int32" />
+          <Property Name="OnlyStr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Addtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Mpr_Admin_Menu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RightUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RightName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Ename" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Sort" Type="Int32" />
+          <Property Name="AddTime" Type="DateTime" Precision="3" />
+          <Property Name="RightParent" Type="Int32" />
+          <Property Name="controller" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="action" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsButton" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Mpr_Admin_Role">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleID" Type="Int32" />
+          <Property Name="PageID" Type="Int32" />
+          <Property Name="ButtonIDCollection" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AddTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Mpr_Basic_Params">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="BasicType" Type="Int32" />
+          <Property Name="ParamsName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Adduser" Type="Int32" />
+          <Property Name="Addtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Mpr_Customer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="ID_Card" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Sex" Type="Int32" Nullable="false" />
+          <Property Name="Birthday" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Province" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+          <Property Name="QQ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WeChat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="SharesAge" Type="Int32" />
+          <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InvestmentVariety" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="AvailableMoney" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="InvestmentAdviser" Type="Int32" />
+          <Property Name="SaleID" Type="Int32" />
+          <Property Name="Sale" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SaleDep" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SaleDirectorID" Type="Int32" />
+          <Property Name="SaleDirector" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SaleManagerID" Type="Int32" />
+          <Property Name="SaleManager" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SaleChiefID" Type="Int32" />
+          <Property Name="SaleChief" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AddUser" Type="Int32" />
+          <Property Name="Addtime" Type="DateTime" Precision="3" />
+          <Property Name="ChangeUser" Type="Int32" />
+          <Property Name="Changetime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Mpr_Customer_Log">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="CustomerID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="Context" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Adduser" Type="Int32" />
+          <Property Name="Addtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Mpr_InterfaceCall_Log">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Addtime" Type="DateTime" Precision="3" />
+          <Property Name="InterfaceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Params" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mpr_Material_Type">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="TypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Sort" Type="Int32" Nullable="false" />
+          <Property Name="AddTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AddUser" Type="Int32" Nullable="false" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateUser" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Mpr_Organization">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Dep" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WorkNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="Photo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Addtime" Type="DateTime" Precision="3" />
+          <Property Name="Adduser" Type="Int32" />
+          <Property Name="Sort" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_Admin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TrueName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LoginPwd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RoleID" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="RoleName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastLogin" Type="DateTime" Precision="3" />
+          <Property Name="LastLoginIP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IsLock" Type="Int32" />
+          <Property Name="Addtime" Type="DateTime" Precision="3" />
+          <Property Name="AdminType" Type="Int32" />
+          <Property Name="FirstID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Sys_Error_log">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ErrType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ErrMsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Sys_Role">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="ROLENAME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Ename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROLEVALUE" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ButtonRole" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NOTE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShowLv" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Mpr_Material">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="AddTime" />
+            <PropertyRef Name="AddUser" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="TypeID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="TypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Des" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Context" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AddUser" Type="Int32" Nullable="false" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateUser" Type="Int32" />
+        </EntityType>
+        <EntityType Name="View_Phone_WareHouse">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="PhoneNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="TaskID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="PhoneID" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="FirstTasktime" Type="DateTime" Precision="3" />
+          <Property Name="Addtime" Type="DateTime" Precision="3" />
+          <Property Name="Adduser" Type="Int32" />
+          <Property Name="Tag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RegistrationID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AbnormalAlert" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="User_Phone_Status" Type="Int32" />
+          <Property Name="LinkCount" Type="Int32" />
+          <Property Name="TaskDes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TaskType" Type="Int32" />
+          <Property Name="TaskStatus" Type="Int32" />
+          <Property Name="TaskData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_User_Phone">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="LinkCount" />
+            <PropertyRef Name="Addtime" />
+            <PropertyRef Name="AddUserIP" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="Tag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RegistrationID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="AbnormalAlert" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="LinkCount" Type="Int32" Nullable="false" />
+          <Property Name="Addtime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AdminID" Type="Int32" />
+          <Property Name="UName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TrueName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AddUserIP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CRM_SystemModelStoreContainer" CdmEntityContainer="CRM_SystemEntities">
+          <EntitySetMapping Name="Mpr_Admin_ButtonRole">
+            <EntityTypeMapping TypeName="CRM_SystemModel.Mpr_Admin_ButtonRole">
+              <MappingFragment StoreEntitySet="Mpr_Admin_ButtonRole">
+                <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+                <ScalarProperty Name="OnlyStr" ColumnName="OnlyStr" />
+                <ScalarProperty Name="Roletype" ColumnName="Roletype" />
+                <ScalarProperty Name="ButtonName" ColumnName="ButtonName" />
+                <ScalarProperty Name="Operation" ColumnName="Operation" />
+                <ScalarProperty Name="PageID" ColumnName="PageID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mpr_Admin_Menu">
+            <EntityTypeMapping TypeName="CRM_SystemModel.Mpr_Admin_Menu">
+              <MappingFragment StoreEntitySet="Mpr_Admin_Menu">
+                <ScalarProperty Name="IsButton" ColumnName="IsButton" />
+                <ScalarProperty Name="action" ColumnName="action" />
+                <ScalarProperty Name="controller" ColumnName="controller" />
+                <ScalarProperty Name="RightParent" ColumnName="RightParent" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Ename" ColumnName="Ename" />
+                <ScalarProperty Name="RightName" ColumnName="RightName" />
+                <ScalarProperty Name="RightUrl" ColumnName="RightUrl" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mpr_Admin_Role">
+            <EntityTypeMapping TypeName="CRM_SystemModel.Mpr_Admin_Role">
+              <MappingFragment StoreEntitySet="Mpr_Admin_Role">
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="ButtonIDCollection" ColumnName="ButtonIDCollection" />
+                <ScalarProperty Name="PageID" ColumnName="PageID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mpr_Basic_Params">
+            <EntityTypeMapping TypeName="CRM_SystemModel.Mpr_Basic_Params">
+              <MappingFragment StoreEntitySet="Mpr_Basic_Params">
+                <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+                <ScalarProperty Name="Adduser" ColumnName="Adduser" />
+                <ScalarProperty Name="ParamsName" ColumnName="ParamsName" />
+                <ScalarProperty Name="BasicType" ColumnName="BasicType" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mpr_Customer">
+            <EntityTypeMapping TypeName="CRM_SystemModel.Mpr_Customer">
+              <MappingFragment StoreEntitySet="Mpr_Customer">
+                <ScalarProperty Name="Changetime" ColumnName="Changetime" />
+                <ScalarProperty Name="ChangeUser" ColumnName="ChangeUser" />
+                <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+                <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+                <ScalarProperty Name="SaleChief" ColumnName="SaleChief" />
+                <ScalarProperty Name="SaleChiefID" ColumnName="SaleChiefID" />
+                <ScalarProperty Name="SaleManager" ColumnName="SaleManager" />
+                <ScalarProperty Name="SaleManagerID" ColumnName="SaleManagerID" />
+                <ScalarProperty Name="SaleDirector" ColumnName="SaleDirector" />
+                <ScalarProperty Name="SaleDirectorID" ColumnName="SaleDirectorID" />
+                <ScalarProperty Name="SaleDep" ColumnName="SaleDep" />
+                <ScalarProperty Name="Sale" ColumnName="Sale" />
+                <ScalarProperty Name="SaleID" ColumnName="SaleID" />
+                <ScalarProperty Name="InvestmentAdviser" ColumnName="InvestmentAdviser" />
+                <ScalarProperty Name="AvailableMoney" ColumnName="AvailableMoney" />
+                <ScalarProperty Name="InvestmentVariety" ColumnName="InvestmentVariety" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="SharesAge" ColumnName="SharesAge" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="WeChat" ColumnName="WeChat" />
+                <ScalarProperty Name="QQ" ColumnName="QQ" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID_Card" ColumnName="ID_Card" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mpr_Customer_Log">
+            <EntityTypeMapping TypeName="CRM_SystemModel.Mpr_Customer_Log">
+              <MappingFragment StoreEntitySet="Mpr_Customer_Log">
+                <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+                <ScalarProperty Name="Adduser" ColumnName="Adduser" />
+                <ScalarProperty Name="Context" ColumnName="Context" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mpr_InterfaceCall_Log">
+            <EntityTypeMapping TypeName="CRM_SystemModel.Mpr_InterfaceCall_Log">
+              <MappingFragment StoreEntitySet="Mpr_InterfaceCall_Log">
+                <ScalarProperty Name="Params" ColumnName="Params" />
+                <ScalarProperty Name="InterfaceName" ColumnName="InterfaceName" />
+                <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mpr_Material_Type">
+            <EntityTypeMapping TypeName="CRM_SystemModel.Mpr_Material_Type">
+              <MappingFragment StoreEntitySet="Mpr_Material_Type">
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mpr_Organization">
+            <EntityTypeMapping TypeName="CRM_SystemModel.Mpr_Organization">
+              <MappingFragment StoreEntitySet="Mpr_Organization">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Adduser" ColumnName="Adduser" />
+                <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="WorkNo" ColumnName="WorkNo" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Dep" ColumnName="Dep" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Admin">
+            <EntityTypeMapping TypeName="CRM_SystemModel.Sys_Admin">
+              <MappingFragment StoreEntitySet="Sys_Admin">
+                <ScalarProperty Name="FirstID" ColumnName="FirstID" />
+                <ScalarProperty Name="AdminType" ColumnName="AdminType" />
+                <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+                <ScalarProperty Name="IsLock" ColumnName="IsLock" />
+                <ScalarProperty Name="LastLoginIP" ColumnName="LastLoginIP" />
+                <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="LoginPwd" ColumnName="LoginPwd" />
+                <ScalarProperty Name="TrueName" ColumnName="TrueName" />
+                <ScalarProperty Name="UName" ColumnName="UName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Error_log">
+            <EntityTypeMapping TypeName="CRM_SystemModel.Sys_Error_log">
+              <MappingFragment StoreEntitySet="Sys_Error_log">
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ErrMsg" ColumnName="ErrMsg" />
+                <ScalarProperty Name="ErrType" ColumnName="ErrType" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Role">
+            <EntityTypeMapping TypeName="CRM_SystemModel.Sys_Role">
+              <MappingFragment StoreEntitySet="Sys_Role">
+                <ScalarProperty Name="ShowLv" ColumnName="ShowLv" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="ButtonRole" ColumnName="ButtonRole" />
+                <ScalarProperty Name="ROLEVALUE" ColumnName="ROLEVALUE" />
+                <ScalarProperty Name="Ename" ColumnName="Ename" />
+                <ScalarProperty Name="ROLENAME" ColumnName="ROLENAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mpr_Material">
+            <EntityTypeMapping TypeName="CRM_SystemModel.Mpr_Material">
+              <MappingFragment StoreEntitySet="Mpr_Material">
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="AddUser" ColumnName="AddUser" />
+                <ScalarProperty Name="AddTime" ColumnName="AddTime" />
+                <ScalarProperty Name="Context" ColumnName="Context" />
+                <ScalarProperty Name="Des" ColumnName="Des" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Phone_WareHouse">
+            <EntityTypeMapping TypeName="CRM_SystemModel.View_Phone_WareHouse">
+              <MappingFragment StoreEntitySet="View_Phone_WareHouse">
+                <ScalarProperty Name="TaskData" ColumnName="TaskData" />
+                <ScalarProperty Name="TaskStatus" ColumnName="TaskStatus" />
+                <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+                <ScalarProperty Name="TaskDes" ColumnName="TaskDes" />
+                <ScalarProperty Name="LinkCount" ColumnName="LinkCount" />
+                <ScalarProperty Name="User_Phone_Status" ColumnName="User_Phone_Status" />
+                <ScalarProperty Name="AbnormalAlert" ColumnName="AbnormalAlert" />
+                <ScalarProperty Name="RegistrationID" ColumnName="RegistrationID" />
+                <ScalarProperty Name="Mac" ColumnName="Mac" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="Adduser" ColumnName="Adduser" />
+                <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+                <ScalarProperty Name="FirstTasktime" ColumnName="FirstTasktime" />
+                <ScalarProperty Name="PhoneID" ColumnName="PhoneID" />
+                <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_User_Phone">
+            <EntityTypeMapping TypeName="CRM_SystemModel.View_User_Phone">
+              <MappingFragment StoreEntitySet="View_User_Phone">
+                <ScalarProperty Name="AddUserIP" ColumnName="AddUserIP" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="TrueName" ColumnName="TrueName" />
+                <ScalarProperty Name="UName" ColumnName="UName" />
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+                <ScalarProperty Name="Addtime" ColumnName="Addtime" />
+                <ScalarProperty Name="LinkCount" ColumnName="LinkCount" />
+                <ScalarProperty Name="AbnormalAlert" ColumnName="AbnormalAlert" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="RegistrationID" ColumnName="RegistrationID" />
+                <ScalarProperty Name="Mac" ColumnName="Mac" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
